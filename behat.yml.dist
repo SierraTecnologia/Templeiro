@@ -1,0 +1,7 @@
+default:
+    extensions:
+        Templeiro\QA\TempleiroExtension:
+            app_dir:  app
+        Alex\MailCatcher\Behat\MailCatcherExtension\Extension: ~
+        WebDriver\Behat\WebDriverExtension\Extension:
+            timeout:  15000

@@ -1,0 +1,364 @@
+*, *:before, *:after{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	font-size: 0;
+	font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
+}
+header,nav,section,aside,footer{
+	margin: 0;
+	padding: 0;
+}
+
+#barra{
+	background-color: #FFF;
+	display: block;
+}
+#inicio{
+	background-color: rgba(0,0,0,1);
+	height: 73px;
+}
+.limite{
+	width: 100%;
+	max-width: 1100px;
+	margin: auto;
+	
+}
+.logo, .menu{
+	display: inline-block;
+	vertical-align: middle;
+}
+.logo{
+	width: 40%;
+}
+.menu{
+	width: 60%;
+}
+.menu ul{
+	padding: 0;
+	margin: 0;
+	text-align: right;
+}
+.menu li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 30px;
+}
+.menu li:last-child{
+	margin-right: 0;
+}
+.menu a{
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+	display: block;
+	padding: 25px 0 25px 0;
+	box-sizing:border-box;
+	-webkit-box-sizing: border-box;
+}
+.menu a:hover{
+	border-bottom: 5px solid red;
+	margin-bottom: -5px;
+}
+.menu a.btn-cadastro, .menu a.btn-login{
+	display: block;
+	padding: 8px 6px;
+	font-weight: bold;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+.menu a.btn-cadastro{
+	border: 2px solid #FFF;
+}
+.menu a.btn-cadastro:hover{
+	background-color: #FFF;
+	color: #eb191e;
+}
+.menu a.btn-login{
+	background-color:#EB191E;
+	color: #FFF;
+
+	border: 2px solid #EB191E;
+}
+#destaque{
+	background: url("../img/1.jpg") center center no-repeat;
+	background-size: cover;
+	height: calc(100% - 364px);
+	position: relative;
+	min-height: 300px;
+	/*height:530px;*/
+}
+.bloco-principal{
+	width: 400px;
+	height: 435px;
+	position: absolute;
+  	/*top: 15%;*/
+  	margin-top: 3%;
+	left: 20%;
+	background-color: #FFF;
+}
+.bloco-texto{
+	position: absolute;
+	right: 0;
+	bottom: 15%;
+	right: 20%;
+}
+.bloco-texto h2{
+	font-size: 32px;
+	color: #FFF;
+}
+ul.bloco-barra-2{
+	background-color: #EB191E;
+}
+ul.bloco-barra-2 > li{
+	display: inline-block;
+	width: 50%;
+	height: 80px;
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+	font-size: 16px;
+	color: #FFF;
+	cursor: pointer;
+}
+ul.bloco-barra-2 > li span:hover{
+	text-decoration: underline;
+}
+ul.bloco-barra-2 > li::after{
+	background-color: white;
+	content: "";
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;	
+	bottom: -10px;
+	left: 45%;
+	right: auto;
+	transform: rotate(45deg);
+}
+ul.bloco-barra-2 > li:last-child::after{
+	/*content: none;*/
+	display: none;
+}
+/*
+.esconder:first-child::after{
+	display: none !important;
+}
+.mostrar:last-child::after{
+	display: block !important;
+}*/
+.esconder::after{
+	display: none !important;
+}
+.mostrar::after{
+	display: block !important;
+}
+.bloco-barra-2 i{
+	display: block;
+	font-size: 28px;
+	margin: 10px 0 0 0;
+}
+
+#reserva, #acesso-reserva{
+	font-size: 14px;
+	position: relative;
+	z-index: 2;
+}
+#reserva{
+	padding: 15px;
+}
+#reserva label{
+	display: block;
+	padding: 10px 0;
+}
+#reserva input{
+	width: 100%;
+	display: inline-block;
+    border: 1px solid #dedede;
+    font-size: 13px;
+    line-height: 30px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#reserva input::placeholder{
+	padding-left: 10px;
+}
+#reserva label.largura-50{
+	width: 48.8%;
+	display: inline-block;
+	padding-bottom: 2px;
+	padding: 10px 0;
+}
+#reserva label.largura-50 input{
+	width: 85%;
+    border: 1px solid #dedede;
+    font-size: 13px;
+    line-height: 30px;
+	box-sizing: border-box;
+	cursor: pointer;	
+}
+#reserva i{
+	display: inline-block;
+	font-size: 20px;
+	color: #eb191e;
+}
+#reserva strong{
+	display: block;
+}
+#reserva span{
+	display: block;
+	color: #333;
+}
+#reserva input#data,
+#reserva input#promocao {
+	display: inline-block;
+	width: 15px;
+}
+#reserva select{
+	padding-bottom: 2px;
+	width: 100%;
+	border: 1px solid #dedede;
+    font-size: 13px;
+    line-height: 30px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#reserva button{
+	width: 100%;
+	background-color: #EB191E;
+	color: #FFF;
+	border: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	padding: 15px 0;
+	cursor: pointer;
+	outline: none;
+}
+#acesso-reserva{
+	padding: 15px;
+}
+#acesso-reserva label{
+	display: block;
+	padding: 10px 0;
+}
+#acesso-reserva strong{
+	display: block;
+}
+#acesso-reserva input{
+	width: 100%;
+	display: inline-block;
+    border: 1px solid #dedede;
+    font-size: 13px;
+    line-height: 30px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#acesso-reserva input::placeholder{
+	padding-left: 10px;
+}
+#acesso-reserva p{
+	color: #333;
+}
+#acesso-reserva button{
+	width: 100%;
+	background-color: #EB191E;
+	color: #FFF;
+	border: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	padding: 15px 0;
+	cursor: pointer;
+	outline: none;
+}
+#informacoes{
+	height: 298px;
+	background-color: white;
+	display: flex;
+}
+#informacoes ul{
+	padding: 0;
+	margin: 0;
+}
+#informacoes li{
+	display: inline-block;
+	flex: 1;
+	box-sizing: border-box;
+	width: 366.67px;
+	height: 188px;
+	padding: 0 15px;
+	vertical-align: top;
+}
+#informacoes li.bg-porcento{
+	background: url("../img/bgRates.png") center center no-repeat;
+}
+#informacoes li.bg-mobile{
+	background: url("../img/bgApp.png") center center no-repeat;
+}
+#informacoes li.bg-garantia{
+	background: url("../img/bgPrice.png") center center no-repeat;
+}
+#informacoes li a{
+	text-decoration: none;
+	text-align: center;
+} 
+#informacoes li h2{
+	margin: 20px 0;
+	color: #EB191E;
+	font-size: 20px;
+	height: 60px;
+	text-transform: uppercase;
+}
+#informacoes li p{
+	color: #5a6066;
+	font-size: 16px;
+	padding: 0 15px;
+}
+/*.bloco-barra-2::after .esconder{
+	display: none !important;
+}*/
+
+
+/*
+SubMenu para Lang
+ */
+
+.menu,
+.sub-menu {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after{
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.sub-menu {
+	list-style: none;
+}
+.sub-menu {
+	background: #444;
+}
+.nav li:hover > .sub-menu {
+	display: block;
+}
+.sub-menu {
+	display: none;
+	position: absolute;
+	max-width: 150px;
+}
+.sub-menu li:hover {
+	background: #555;
+}
+.sub-menu .sub-menu {
+	top: 0;
+	left: 100%;
+}

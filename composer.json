@@ -1,0 +1,99 @@
+{
+    "name": "sierratecnologia/templeiro",
+    "description": "Templeiro de Projetos",
+    "type": "library",
+    "keywords": [
+        "sierratecnologia",
+        "templeiro"
+    ],
+    "license": "MIT",
+    "homepage": "https://sierratecnologia.com/packages/templeiro/",
+    "support": {
+        "email": "help@sierratecnologia.com",
+        "issues": "https://github.com/sierratecnologia/templeiro/issues",
+        "source": "https://github.com/sierratecnologia/templeiro",
+        "docs": "https://github.com/sierratecnologia/templeiro/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "SierraTecnologia",
+            "homepage": "https://sierratecnologia.com.br",
+            "email": "help@sierratecnologia.com.br"
+        }
+    ],
+    "require": {
+        "php": "^7.3.0",
+        "sierratecnologia/crypto":          "dev-master",
+        "sierratecnologia/operador": "dev-master",
+        "sierratecnologia/integrations":    "dev-master",
+        "sierratecnologia/telefonica":      "dev-master",
+        "deployer/deployer":            ">=6.4",
+        "vanderlee/php-sentence":       ">=1.0",
+        "fzaninotto/faker":             "*",
+        "php-http/guzzle6-adapter":     "*",
+        "devio/pipedrive":              "*",
+        "league/flysystem-aws-s3-v3":   "*",
+        "league/plates":                "^3.1|^4.0|^5.0",
+        "geerlingguy/ping":             "*",
+        "phpbench/phpbench":            "*",
+        "phploc/phploc":                "*",
+        "phpmd/phpmd":                  "*",
+        "squizlabs/php_codesniffer":    "*",
+        "phpro/grumphp":                "*",
+        "phpseclib/phpseclib":          "*",
+        "phpstan/phpstan":              "*",
+        "phpunit/phpunit":              "*",
+        "aws/aws-sdk-php":              "*",
+        "predis/predis":                "*",
+        "sebastian/diff":               "*",
+        "sebastian/phpcpd":             "*",
+        "gitonomy/git-bundle":          ">=0.1",
+
+        "leafo/lessphp":                    ">=0.4"
+    },
+    "require-dev": {
+        "behat/behat":                   "~2.5",
+        "alexandresalome/php-webdriver": "~0.7",
+        "phpunit/phpunit":               "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Templeiro\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../**",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "laravel": {
+            "providers": [
+                "Templeiro\\TempleiroProvider"
+            ]
+        }
+    }
+}
