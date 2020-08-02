@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\View;
 
 use Log;
 use App;
-use Config;
-use Route;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 
 use Muleta\Traits\Providers\ConsoleTools;
 
@@ -39,84 +42,7 @@ class TempleiroProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Tecnologia|110' => [
-            [
-                'text' => 'Desenvolvimento',
-                'icon' => 'fas fa-fw fa-search',
-                'icon_color' => "blue",
-                'label_color' => "success",
-                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-            ],
-            'Desenvolvimento' => [
-                // [
-                //     'text'        => 'Procurar',
-                //     'icon'        => 'fas fa-fw fa-search',
-                //     'icon_color'  => 'blue',
-                //     'label_color' => 'success',
-                //     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                //     // 'access' => \App\Models\Role::$ADMIN
-                // ],
-                // [
-                //     'text'        => 'Administração',
-                //     'icon'        => 'fas fa-fw fa-search',
-                //     'icon_color'  => 'blue',
-                //     'label_color' => 'success',
-                //     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                //     // 'access' => \App\Models\Role::$ADMIN
-                // ],
-                // 'Procurar' => [
-                    [
-                        'text'        => 'Projetos',
-                        'route'       => 'rica.templeiro.projects.index',
-                        'icon'        => 'fas fa-fw fa-ship',
-                        'icon_color'  => 'blue',
-                        'label_color' => 'success',
-                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'access' => \App\Models\Role::$ADMIN
-                    ],
-                // ],
-            ],
-        ],
-        'Personalização|250' => [
-            [
-                'text'        => 'Tarefas',
-                'icon'        => 'fas fa-fw fa-search',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Processos',
-                'icon'        => 'fas fa-fw fa-search',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            'Processos' => [
-                [
-                    'text'        => 'Arquitetura',
-                    'route'       => 'rica.templeiro.manager.arquitetura.index',
-                    'icon'        => 'fas fa-fw fa-car',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
-                ],
-            ],
-            'Tarefas' => [
-                [
-                    'text'        => 'Fields',
-                    'route'       => 'rica.templeiro.manager.fields.index',
-                    'icon'        => 'fas fa-fw fa-car',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
-                ],
-            ],
-        ],
+        
     ];
 
     /**
@@ -134,6 +60,35 @@ class TempleiroProvider extends ServiceProvider
         });
 
         $this->loadLogger();
+
+        $theme = Config::get('siravel.frontend-theme', 'sierratecnologia');
+        View::addLocation(base_path('resources/themes/'.$theme.'/views'));
+        View::addNamespace('siravel-frontend', base_path('resources/themes/'.$theme.'/views'));
+        View::addNamespace('front', base_path('resources/themes/'.$theme.'/views'));
+
+        /*
+        |--------------------------------------------------------------------------
+        | Blade Directives
+        |--------------------------------------------------------------------------
+        */
+
+        Blade::directive('theme', function ($expression) {
+            if (Str::startsWith($expression, '(')) {
+                $expression = substr($expression, 1, -1);
+            }
+
+            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
+
+            return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
+        });
+
+        Blade::directive('themejs', function ($expression) use ($theme) {
+            return "<?php echo Minify::javascript('/../resources/themes/$theme/assets/js/'.$expression); ?>";
+        });
+
+        Blade::directive('themecss', function ($expression) use ($theme) {
+            return "<?php echo Minify::stylesheet('/../resources/themes/$theme/assets/css/'.$expression); ?>";
+        });
     }
 
     /**
@@ -154,7 +109,6 @@ class TempleiroProvider extends ServiceProvider
             [
                 'namespace' => '\Templeiro\Http\Controllers',
                 'prefix' => \Illuminate\Support\Facades\Config::get('application.routes.main', ''),
-                'as' => 'rica.',
                 // 'middleware' => 'rica',
             ], function ($router) {
                 include __DIR__.'/../routes/web.php';

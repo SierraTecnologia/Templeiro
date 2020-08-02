@@ -9,9 +9,14 @@ Route::group(
                     ['as' => 'templeiro.'], function () {
 
 
+                        // Route::get('public-preview/{encFileName}', 'AssetController@asPreview')->name('index');
+                        // Route::get('public-asset/{encFileName}', 'AssetController@asPublic')->name('index');
+                        // Route::get('public-download/{encFileName}/{encRealFileName}', 'AssetController@asDownload')->name('index');
+                        Route::get('asset/{path}/{contentType}', 'AssetController@asset')->name('asset');
 
 
-                        Route::resource('projects', 'ProjectController');
+
+                        // Route::resource('projects', 'ProjectController');
                         // /**
                         //  * 
                         //  */
@@ -36,42 +41,6 @@ Route::group(
                         //         );
                         //     }
                         // );
-
-                        /**
-                         * Manager
-                         */
-                        Route::namespace('Manager')->group(
-                            function () {
-                                Route::prefix('manager')->group(
-                                    function () {
-                                        Route::group(
-                                            ['as' => 'manager.'], function () {
-
-                                                Route::prefix('arquitetura')->group(
-                                                    function () {
-                                                        Route::group(
-                                                            ['as' => 'arquitetura.'], function () {
-                                                                Route::get('/', 'ArquiteturaController@index')->name('index');
-                                                            }
-                                                        );
-                                                    }
-                                                );    
-                                                Route::prefix('fields')->group(
-                                                    function () {
-                                                        Route::group(
-                                                            ['as' => 'fields.'], function () {
-                                                                Route::get('/', 'FieldsController@index')->name('index');
-                                                            }
-                                                        );
-                                                    }
-                                                );
-                                            }
-                                        );
-                                    }
-                                );    
-                            }
-                        );
-
 
 
                     }
