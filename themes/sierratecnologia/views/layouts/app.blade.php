@@ -9,8 +9,7 @@
  */
 ?>
 <!DOCTYPE html>
-
-<html lang="{!! app('translation'::class)->getActualLanguage() !!}">
+<html lang="pt-BR">
 
 <head>
     <!--[if lt IE 9]>
@@ -78,9 +77,10 @@
 
     <!-- PAGE TITLE -->
     <title>SierraTecnologia &#8211; {{ trans('homepage.page_title') }}</title>
+
     {!! Minify::stylesheet([
         Templeiro::asset('bootstrap/css/bootstrap.min.css', 'text/css'),
-        Templeiro::asset('fonts/linear-fonts.css', 'text/css'),
+        Templeiro::asset('fonts/font-awesome.css', 'text/css'),
         Templeiro::asset('owlcarousel/css/owl.carousel.css', 'text/css'),
         Templeiro::asset('owlcarousel/css/owl.theme.css', 'text/css'),
         Templeiro::asset('css/magnific-popup.css', 'text/css'),
@@ -88,25 +88,37 @@
         Templeiro::asset('css/style.css', 'text/css'),
         Templeiro::asset('css/responsive.css', 'text/css')
     ]) !!}
+    <?php /**
+     * Após Awesome
+     *  Templeiro::asset('fonts/linear-fonts.css', 'text/css')
+     */
+    ?>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
-    <?php /*
+<?php /*
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
-    
-    <link rel="stylesheet" href="{{ mix('/css/app.css') }}" /> 
-        @themecss('app.css')*/?>
+
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}" />
 
     <!-- ALL GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:300,400,700,900&subset=latin-ext" rel="stylesheet">
+        */ ?>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @if (View::exists('socrates::botman.partials.css'))
+        @include('socrates::botman.partials.css')
+    @elseif (View::exists('boravel::botman.partials.css'))
+        @include('boravel::botman.partials.css')
+    @endif
 </head>
 
 <body>
@@ -223,11 +235,13 @@
         </div>
     </div>
     <!-- / END SCROOL UP DESIGN AREA -->
+
     {!! Minify::javascript([
         Templeiro::asset('js/jquery-3.2.1.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery-migrate-3.0.0.js', 'application/javascript'),
         Templeiro::asset('bootstrap/js/bootstrap.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.appear.js', 'application/javascript'),
+        Templeiro::asset('owlcarousel/js/owl.carousel.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.mixitup.js', 'application/javascript'),
         Templeiro::asset('js/jquery.magnific-popup.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.stellar.min.js', 'application/javascript'),
@@ -237,23 +251,26 @@
         Templeiro::asset('js/wow.min.js', 'application/javascript'),
         Templeiro::asset('js/form-contact.js', 'application/javascript'),
         Templeiro::asset('js/scripts.js', 'application/javascript')
-    ]) !!}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    ]) !!}*/
+    <?php /*<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-<?php /*
-        Templeiro::asset('owlcarousel/js/owl.carousel.min.js', 'application/javascript'),
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
-    
-    @themejs('app.dist.js')
- */ ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> ?>
+    <script src="{{ mix('/js/app.js') }}"></script>*/ ?>
+    <script src="https://use.fontawesome.com/faac944fcf.js"></script>
     <script type="text/javascript">
         $('.player').mb_YTPlayer();
     </script>
-    <script src="https://use.fontawesome.com/faac944fcf.js"></script>
+
+    @if (View::exists('socrates::botman.partials.js'))
+        @include('socrates::botman.partials.js')
+    @elseif (View::exists('boravel::botman.partials.js'))
+        @include('boravel::botman.partials.js')
+    @endif
+
 </body>
 
 </html>
