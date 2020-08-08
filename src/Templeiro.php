@@ -8,6 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use View;
 use Config;
@@ -51,13 +52,58 @@ class Templeiro
      *
      * @var Illuminate\Contracts\View\Factory
      */
-    protected $layout;
+    protected $layout = false;
 
     protected $theme = 'default';
 
-    public function __construct()
+    public function __construct($theme)
+    {
+        $this->theme = $theme;
+
+        // $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
+        // $locationTheme = __DIR__.'/../'.'themes/';
+
+        // View::addLocation($locationTheme.$theme.'/views');
+        // View::addNamespace('siravel-frontend', $locationTheme.$theme.'/views');
+        // View::addNamespace('default-frontend', $locationTheme.'default/views');
+        
+    }
+
+    public function loadBoot()
     {
 
+        $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
+        $locationTheme = __DIR__.'/../'.'themes/';
+
+        View::addLocation($locationTheme.$this->theme.'/views');
+        View::addNamespace('siravel-frontend', $locationTheme.$this->theme.'/views');
+        View::addNamespace('default-frontend', $locationTheme.'default/views');
+
+        /*
+        |--------------------------------------------------------------------------
+        | Blade Directives
+        |--------------------------------------------------------------------------
+        */
+
+        Blade::directive('theme', function ($expression) {
+            if (Str::startsWith($expression, '(')) {
+                $expression = substr($expression, 1, -1);
+            }
+
+            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
+
+            return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
+        });
+
+        Blade::directive('themejs', function ($expression) {
+            return "<?php echo Minify::javascript('".__DIR__."/../themes/".$this->theme."/assets/js/'.$expression); ?>";
+            /* return "<?php echo Minify::javascript('../themes/".$this->theme."/assets/js/'.$expression); ?>"; */
+        });
+
+        Blade::directive('themecss', function ($expression) {
+            return "<?php echo Minify::stylesheet('".__DIR__."/../themes/".$this->theme."/assets/css/'.$expression); ?>";
+            /* return "<?php echo Minify::stylesheet('../themes/".$this->theme."/assets/css/'.$expression); ?>"; */
+        });
     }
 
 
@@ -70,10 +116,10 @@ class Templeiro
      *
      * @return string
      */
-    public function asset($path, $contentType = 'null', $fullURL = true)
+    public function asset($path, $contentType = 'null', $fullURL = false)
     {
         if (!$fullURL) {
-            return $filePath = __DIR__.'/../../'.'themes/'.Config::get('siravel.frontend-theme', 'sierratecnologia').'/assets/'.$path;
+            return $filePath = __DIR__.'/../'.'themes/'.$this->theme.'/assets/'.$path;
         }
 
         return url('/templeiro/asset/'.Crypto::urlEncode($path).'/'.Crypto::urlEncode($contentType));
@@ -85,11 +131,22 @@ class Templeiro
     {
 
     }
+    public function title()
+    {
+        return 'title';
+    }
+    public function description()
+    {
+        return 'description';
+    }
 
     public function loadView()
     {
+        if ($this->layout) {
+            return ;
+        }
         // Set the layout from the Config file
-        $this->layout = View::make(\Illuminate\Support\Facades\Config::get('painel.core.layout'));
+        $this->layout = View::make('siravel-frontend::layouts.master');
     }
 
 
@@ -101,19 +158,17 @@ class Templeiro
      * @param  array $vars    Key value pairs passed to the content view
      * @return Illuminate\View\View
      */
-    protected function populateView($content, $vars = [])
+    public function populateView($content, $vars = [])
     {
+        $this->loadView();
+
         // The view
-        if (is_string($content)) {
-            $this->layout->content = View::make($content);
-        } else {
-            $this->layout->content = $content;
-        }
+        $this->layout->content = $this->getContentView($content);
 
         // Set vars
         $this->layout->title = $this->title();
         $this->layout->description = $this->description();
-        View::share('controller', $this->controller);
+        // View::share('controller', $this->controller);
 
         // Make sure that the content is a Laravel view before applying vars.
         // to it.  In the case of the index view, `content` is a Fields\Listing
@@ -124,6 +179,24 @@ class Templeiro
 
         // Return the layout View
         return $this->layout;
+    }
+
+    private function getContentView($content)
+    {
+        if (!is_string($content)) {
+            return $content;
+        }
+
+        if (View::exists('siravel-frontend::'.$content)) {
+            return View::make('siravel-frontend::'.$content);
+        }
+
+        if (View::exists('default-frontend::'.$content)) {
+            return View::make('default-frontend::'.$content);
+        }
+        
+        return View::make($content);
+
     }
     
 }

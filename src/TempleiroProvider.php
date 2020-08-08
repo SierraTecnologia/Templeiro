@@ -61,34 +61,8 @@ class TempleiroProvider extends ServiceProvider
 
         $this->loadLogger();
 
-        $theme = Config::get('siravel.frontend-theme', 'sierratecnologia');
-        View::addLocation(base_path('resources/themes/'.$theme.'/views'));
-        View::addNamespace('siravel-frontend', base_path('resources/themes/'.$theme.'/views'));
-        View::addNamespace('front', base_path('resources/themes/'.$theme.'/views'));
+        $this->app['templeiro']->loadBoot();
 
-        /*
-        |--------------------------------------------------------------------------
-        | Blade Directives
-        |--------------------------------------------------------------------------
-        */
-
-        Blade::directive('theme', function ($expression) {
-            if (Str::startsWith($expression, '(')) {
-                $expression = substr($expression, 1, -1);
-            }
-
-            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
-
-            return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
-        });
-
-        Blade::directive('themejs', function ($expression) use ($theme) {
-            return "<?php echo Minify::javascript('/../resources/themes/$theme/assets/js/'.$expression); ?>";
-        });
-
-        Blade::directive('themecss', function ($expression) use ($theme) {
-            return "<?php echo Minify::stylesheet('/../resources/themes/$theme/assets/css/'.$expression); ?>";
-        });
     }
 
     /**
@@ -134,7 +108,7 @@ class TempleiroProvider extends ServiceProvider
 
         $this->app->singleton(
             'templeiro', function () {
-                return new Templeiro();
+                return new Templeiro(Config::get('siravel.frontend-theme', 'sierratecnologia'));
             }
         );
         
