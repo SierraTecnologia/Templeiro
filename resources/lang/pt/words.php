@@ -49,4 +49,5 @@ return [
     'dominios' => 'Dominios',
     'dominio' => 'Dominio',
     'signOut' => 'Sign out',
+    'changelog' => 'Application Changelog',
 ];

@@ -42,4 +42,5 @@ return [
     'deletedAt' => 'Deleted At',
     'accounts' => 'Accounts',
     'category' => 'Category',
+    'changelog' => 'Application Changelog'
 ];
