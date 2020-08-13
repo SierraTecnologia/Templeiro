@@ -158,7 +158,7 @@
                     <article>
                         <aside class>
                             <h2>{!! trans('snowevo.pagueComPaypal') !!}</h2>
-                            <div class="box">
+                            <div class="box card">
                                 <a class="fancybox icon-zoom" href="{!! Siravel::img_lang('img/media/2016/card1.png') !!}" data-fancybox-group="snowtrip_card1" title="{!! trans('snowevo.pagueComPay') !!}"><img src="{!! Siravel::img_lang('img/media/2016/card1.png') !!}"></a>
                             </div>
                             <ul>
@@ -172,7 +172,7 @@
 
                         <aside class>
                             <h2>{!! trans('snowevo.pagueComPay') !!}</h2>
-                            <div class="box">
+                            <div class="box card">
                                 <a class="fancybox icon-zoom" href="{!! Siravel::img_lang('img/media/2016/card2.png') !!}" data-fancybox-group="snowtrip_card2" title="Açaí em Andorra"><img src="{!! Siravel::img_lang('img/media/2016/card2.png') !!}"></a>
                             </div>
                             <ul>
@@ -187,7 +187,7 @@
 
                         <aside class>
                             <h2>LES DEUX ALPES<br/>{!! trans('snowevo.franca') !!}</h2>
-                            <div class="box">
+                            <div class="box card">
                                 {!! trans('snowevo.summercamps') !!}
                                 <p><strong>Chalet</strong></p>
                                 <a class="fancybox icon-zoom" href="img/media/2016/card3.png" data-fancybox-group="snowtrip_card3" title="LES DEUX ALPES {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card3.png"></a>
@@ -211,7 +211,7 @@
 
                         <aside class>
                             <h2>FRONTERA BLANCA<br/>GRANDVALIRA 19</h2>
-                            <div class="box">
+                            <div class="box card">
                                 Pas de la Casa<h1>290€</h1>
                                 <p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>
                                 <a class="fancybox icon-zoom" href="img/media/2016/card4.png" data-fancybox-group="snowtrip_card4" title="FRONTERA BLANCA GRANDVALIRA"><img src="img/media/2016/card4.png"></a>
@@ -229,7 +229,7 @@
                         </aside>
                         <aside class>
                             <h2>HOTEL CARIBOU<br/>GRANDVALIRA 19</h2>
-                            <div class="box">
+                            <div class="box card">
                                 Pas de la Casa<h1>650€</h1>
                                 <p><strong>****</strong></p>
                                 <p></p>
@@ -248,7 +248,7 @@
                         </aside>
                         <aside class>
                             <h2>HOTEL SKI PLAZA<br/>GRANDVALIRA</h2>
-                            <div class="box">
+                            <div class="box card">
                                 Pas de la Casa<h1>880€</h1>
                                 <p><strong>*****</strong></p>
                                 <p></p>
@@ -283,7 +283,7 @@
                         <article>
                             <aside class>
                                 <h2>{{ $card->title }}<br/>{{ $card->description }}</h2>
-                                <div class="box">
+                                <div class="box card">
                                     {{ $card->subTitle }}<h1>{{ $card->price }}€</h1>
                                     <p><strong>{{ $card->subDescription }}</strong></p>
                                     <a class="fancybox icon-zoom" href="{!! Siravel::img_lang($card->image) !!}" data-fancybox-group="snowtrip_card{{ $contador }}" title="{!! $card->imagesTitle !!}"><img src="{{ $card->image }}"></a>

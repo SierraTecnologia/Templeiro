@@ -11,8 +11,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-body">
+	<div class="box card box-primary">
+		<div class="box-body card-body">
 			<form action="{{url('/admin/users/store')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "user_id">

@@ -1,11 +1,11 @@
 @extends('scaffold-interface.layouts.app')
 @section('content')
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-header">
+	<div class="box card box-primary">
+		<div class="box-header card-header">
 			<h3>Create new user</h3>
 		</div>
-		<div class="box-body">
+		<div class="box-body card-body">
 			<form action="{{url('scaffold-users/store')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "user_id">

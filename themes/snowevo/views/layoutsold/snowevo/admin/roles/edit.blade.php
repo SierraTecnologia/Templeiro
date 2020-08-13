@@ -11,8 +11,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-body">
+	<div class="box card box-primary">
+		<div class="box-body card-body">
 			<form action="{{url('/admin/roles/update')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "role_id" value = "{{$role->id}}">
@@ -20,7 +20,7 @@
 				<label for="">{{ trans('admin.role') }}</label>
 					<input type="text" name = "name" class = "form-control" placeholder = "Name" value = "{{$role->name}}">
 				</div>
-				<div class="box-footer">
+				<div class="box-footer card-footer">
 					<button class = 'btn btn-primary' type = "submit">{{ trans('default.update') }}</button>
 				</div>
 			</form>

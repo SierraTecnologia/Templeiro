@@ -22,7 +22,7 @@
 				<div class="icon">
 					<i class="ion ion-person-stalker"></i>
 				</div>
-				<a href="{{url('admin/users')}}" class="small-box-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
+				<a href="{{url('admin/users')}}" class="small-box-footer card-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 		<div class="col-lg-3 col-xs-6">
@@ -35,7 +35,7 @@
 				<div class="icon">
 					<i class="fa fa-user-plus"></i>
 				</div>
-				<a href="{{url('admin/roles')}}" class="small-box-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
+				<a href="{{url('admin/roles')}}" class="small-box-footer card-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 		<div class="col-lg-3 col-xs-6">
@@ -48,7 +48,7 @@
 				<div class="icon">
 					<i class="fa fa-key"></i>
 				</div>
-				<a href="{{url('admin/permissions')}}" class="small-box-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
+				<a href="{{url('admin/permissions')}}" class="small-box-footer card-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 
@@ -64,7 +64,7 @@
 				<div class="icon">
 					<i class="fa fa-book"></i>
 				</div>
-				<a href="{{url('admin')}}/{{lcfirst(str_singular($entity->tablename))}}" class="small-box-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
+				<a href="{{url('admin')}}/{{lcfirst(str_singular($entity->tablename))}}" class="small-box-footer card-footer">{{ trans('admin.more_info') }} <i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 		@endforeach

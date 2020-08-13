@@ -10,8 +10,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-body">
+	<div class="box card box-primary">
+		<div class="box-body card-body">
             <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{url('/admin/roles/create')}}"><i class="fa fa-plus fa-md" aria-hidden="true"></i> {{ trans('default.new') }}</a>
 			<table class="table table-striped">
 				<head>

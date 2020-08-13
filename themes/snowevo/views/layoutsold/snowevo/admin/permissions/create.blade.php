@@ -11,15 +11,15 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-body">
+	<div class="box card box-primary">
+		<div class="box-body card-body">
 			<form action="{{url('/admin/permissions/store')}}" method = "post">
 				{!! csrf_field() !!}
 				<div class="form-group">
 				<label for="">{{ trans('admin.permission') }}</label>
 					<input type="text" name = "name" class = "form-control" placeholder = "Name">
 				</div>
-				<div class="box-footer">
+				<div class="box-footer card-footer">
 					<button class = 'btn btn-primary' type = "submit">{{ trans('default.create') }}</button>
 				</div>
 			</form>

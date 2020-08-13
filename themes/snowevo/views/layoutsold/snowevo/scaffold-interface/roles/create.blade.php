@@ -1,18 +1,18 @@
 @extends('scaffold-interface.layouts.app')
 @section('content')
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-header">
+	<div class="box card box-primary">
+		<div class="box-header card-header">
 			<h3>Create new Role</h3>
 		</div>
-		<div class="box-body">
+		<div class="box-body card-body">
 			<form action="{{url('scaffold-roles/store')}}" method = "post">
 				{!! csrf_field() !!}
 				<div class="form-group">
 				<label for="">Role</label>
 					<input type="text" name = "name" class = "form-control" placeholder = "Name">
 				</div>
-				<div class="box-footer">
+				<div class="box-footer card-footer">
 					<button class = 'btn btn-primary' type = "submit">Create</button>
 				</div>
 			</form>

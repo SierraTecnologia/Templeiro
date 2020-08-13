@@ -11,8 +11,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-body">
+	<div class="box card box-primary">
+		<div class="box-body card-body">
 			<form action="{{url('/admin/permissions/update')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "permission_id" value = "{{$permission->id}}">
@@ -20,7 +20,7 @@
 				<label for="">{{ trans('admin.permission') }}</label>
 					<input type="text" name = "name" class = "form-control" placeholder = "Name" value = "{{$permission->name}}">
 				</div>
-				<div class="box-footer">
+				<div class="box-footer card-footer">
 					<button class = 'btn btn-primary' type = "submit">{{ trans('default.update') }}</button>
 				</div>
 			</form>

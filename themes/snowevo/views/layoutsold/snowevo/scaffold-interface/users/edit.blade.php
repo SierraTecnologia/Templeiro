@@ -1,11 +1,11 @@
 @extends('scaffold-interface.layouts.app')
 @section('content')
 <section class="content">
-	<div class="box box-primary">
-		<div class="box-header">
+	<div class="box card box-primary">
+		<div class="box-header card-header">
 			<h3>Edit User ({{$user->name}})</h3>
 		</div>
-		<div class="box-body">
+		<div class="box-body card-body">
 			<form action="{{url('scaffold-users/update')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "user_id" value = "{{$user->id}}">
@@ -27,11 +27,11 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="box box-primary">
-				<div class="box-header">
+			<div class="box card box-primary">
+				<div class="box-header card-header">
 					<h3>{{$user->name}} Roles</h3>
 				</div>
-				<div class="box-body">
+				<div class="box-body card-body">
 					<form action="{{url('scaffold-users/addRole')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">
@@ -64,11 +64,11 @@
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="box box-primary">
-				<div class="box-header">
+			<div class="box card box-primary">
+				<div class="box-header card-header">
 					<h3>{{$user->name}} Permissions</h3>
 				</div>
-				<div class="box-body">
+				<div class="box-body card-body">
 					<form action="{{url('scaffold-users/addPermission')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">
