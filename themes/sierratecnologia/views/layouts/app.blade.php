@@ -241,7 +241,6 @@
         Templeiro::asset('js/jquery-migrate-3.0.0.js', 'application/javascript'),
         Templeiro::asset('bootstrap/js/bootstrap.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.appear.js', 'application/javascript'),
-        Templeiro::asset('owlcarousel/js/owl.carousel.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.mixitup.js', 'application/javascript'),
         Templeiro::asset('js/jquery.magnific-popup.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery.stellar.min.js', 'application/javascript'),
@@ -251,11 +250,19 @@
         Templeiro::asset('js/wow.min.js', 'application/javascript'),
         Templeiro::asset('js/form-contact.js', 'application/javascript'),
         Templeiro::asset('js/scripts.js', 'application/javascript')
-    ]) !!}*/
-    <?php /*<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    ]) !!}
+    <?php 
+    /*
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        Templeiro::asset('owlcarousel/js/owl.carousel.min.js', 'application/javascript'),
+    */
+    
+    
+    /*<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>*/
+    ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <?php
+    /**<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> ?>
