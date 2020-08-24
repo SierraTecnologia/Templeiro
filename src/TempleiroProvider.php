@@ -2,29 +2,31 @@
 
 namespace Templeiro;
 
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
-use Templeiro\Services\TempleiroService;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\View;
-
-use Log;
 use App;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Collection;
+
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
+use Log;
 
 use Muleta\Traits\Providers\ConsoleTools;
 
 use Templeiro\Facades\Templeiro as TempleiroFacade;
-use Illuminate\Contracts\Events\Dispatcher;
+use Templeiro\Services\TempleiroService;
 
 
 class TempleiroProvider extends ServiceProvider
 {
+    public $packageName = 'templeiro';
+
     use ConsoleTools;
 
     public static $aliasProviders = [
@@ -77,17 +79,9 @@ class TempleiroProvider extends ServiceProvider
         }
 
         /**
-         * Templeiro; Routes
+         * Stalker Routes
          */
-        Route::group(
-            [
-                'namespace' => '\Templeiro\Http\Controllers',
-                'prefix' => \Illuminate\Support\Facades\Config::get('application.routes.main', ''),
-                // 'middleware' => 'rica',
-            ], function ($router) {
-                include __DIR__.'/../routes/web.php';
-            }
-        );
+        $this->loadRoutesForRiCa(__DIR__.'/../routes');
     }
 
     /**
