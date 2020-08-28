@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.master')
+@extends('layouts.frontend')
 
 @section('seoDescription') {{ $event->seo_description }} @endsection
 @section('seoKeywords') {{ $event->seo_keywords }} @endsection
@@ -6,11 +6,6 @@
 @section('content')
 
     <div class="container">
-
-        <div class="jumbotron">
-            <h1>Featured Event</h1>
-            <h2>{{ $event->title }}</h2>
-        </div>
 
         @if (config('app.locale') !== config('siravel.default-language'))
             <h1>{!! $event->translationData(config('app.locale'))->title !!}</h1>
@@ -27,5 +22,5 @@
 @endsection
 
 @section('siravel')
-    <li class="nav-text">@edit('events', $event->id)</li>
+    @edit('events', $event->id)
 @endsection

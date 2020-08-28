@@ -1,18 +1,18 @@
-@extends('siravel-frontend::layouts.master')
+@extends('layouts.frontend')
 
 @section('content')
 
 <div class="container">
 
     <div class="row">
-        <div class="col-md-12 mb-4">
+        <div class="col-md-12">
             {!! $calendar->asHtml([ 'class' => 'calendar', 'dates' => $events ]); !!}
-            {!! $calendar->links('cal-link btn btn-secondary'); !!}
+            {!! $calendar->links('cal-link btn btn-default'); !!}
         </div>
     </div>
 
 @endsection
 
 @section('siravel')
-    <li class="nav-text">@edit('events')</li>
+    @edit('events')
 @endsection

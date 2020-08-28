@@ -1,4 +1,4 @@
-@extends('siravel-frontend::layouts.master')
+@extends('layouts.frontend')
 
 @section('seoDescription') {{ $page->seo_description }} @endsection
 @section('seoKeywords') {{ $page->seo_keywords }} @endsection
@@ -7,9 +7,11 @@
 
 <div class="container">
 
-    <h1 class="page-header">{{ $page->title }}</h1>
+    <h1 class="page-header">{!! $page->title !!}</h1>
 
-    @markdown($page->entry)
+    <div class="entry-row">
+        {!! $page->entry !!}
+    </div>
 
 </div>
 

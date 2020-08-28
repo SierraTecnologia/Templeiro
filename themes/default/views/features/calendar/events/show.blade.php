@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('siravel-frontend::layouts.master')
 
 @section('seoDescription') {{ $event->seo_description }} @endsection
 @section('seoKeywords') {{ $event->seo_keywords }} @endsection
@@ -22,5 +22,5 @@
 @endsection
 
 @section('siravel')
-    @edit('events', $event->id)
+    <li class="nav-text">@edit('events', $event->id)</li>
 @endsection

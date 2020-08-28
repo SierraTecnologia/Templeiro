@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('siravel-frontend::layouts.master')
 
 @section('seoDescription') {{ $page->seo_description }} @endsection
 @section('seoKeywords') {{ $page->seo_keywords }} @endsection

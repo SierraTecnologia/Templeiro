@@ -1,10 +1,10 @@
-@extends('siravel-frontend::layouts.master')
+@extends('layouts.frontend')
 
 @section('content')
 
 <div class="container">
 
-    <h1 class="page-header">Pages Directory</h1>
+    <h1 class="page-header">{!! trans('features.pageDirectory') !!}</h1>
 
     <table class="table table-striped">
         @foreach($pages as $page)

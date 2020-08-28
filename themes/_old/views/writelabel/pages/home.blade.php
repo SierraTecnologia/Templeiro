@@ -1,15 +1,7 @@
-@extends('siravel-frontend::layouts.master')
-
-@if (isset($page))
-    @section('seoDescription') {{ $page->seo_description }} @endsection
-    @section('seoKeywords') {{ $page->seo_keywords }} @endsection
-@endif
-
-@section('content')
 
 <div class="homepage-banner">
     <h1>{{ config('app.name') }}</h1>
-    <p class="lead">Fluent, Minimalism</p>
+    <p class="lead">{{ config('app.description') }}</p>
 </div>
 
 <div class="container">
@@ -21,8 +13,8 @@
             <div class="col-md-6">
                 <div class="well">
                     <h3>Basics</h3>
-                    <p>In order to add content to this page login to Cms and add a home page. Remember you can set up
-                        your own Auth for Cms or run the artisan command: <code>php artisan sierratecnologia:cms-setup</code> to get
+                    <p>In order to add content to this page login to Siravel and add a home page. Remember you can set up
+                        your own Auth for Siravel or run the artisan command: <code>php artisan siravel:setup</code> to get
                         a prebuilt auth system.</p>
                     <p>Once you're all set up try building a menu with slug: main, and a widget with the slug: widget. You'll see the theme display them right away!</p>
                 </div>
@@ -57,10 +49,3 @@
     @endif
 
 </div>
-@endsection
-
-@section('siravel')
-    @if (isset($page))
-        @edit('pages', $page->id)
-    @endif
-@endsection

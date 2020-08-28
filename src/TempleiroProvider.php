@@ -102,7 +102,7 @@ class TempleiroProvider extends ServiceProvider
 
         $this->app->singleton(
             'templeiro', function () {
-                return new Templeiro(Config::get('siravel.frontend-theme', 'sierratecnologia'));
+                return new Templeiro(Config::get('siravel.frontend-theme', 'default'));
             }
         );
         

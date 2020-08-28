@@ -1,10 +1,10 @@
-@extends('siravel-frontend::layouts.master')
+@extends('layouts.frontend')
 
 @section('content')
 
 <div class="container">
 
-    <h1 class="page-header">Events ({{ $date->format('d M, Y') }})</h1>
+    <h1 class="page-header">{!! trans('features.events') !!} ({{ $date->format('d M, Y') }})</h1>
 
     @foreach($events as $event)
         @if (config('app.locale') !== config('siravel.default-language'))
@@ -19,5 +19,5 @@
 @endsection
 
 @section('siravel')
-    <li class="nav-text">@edit('events')</li>
+    @edit('events')
 @endsection
