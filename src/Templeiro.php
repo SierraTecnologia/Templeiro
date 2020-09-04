@@ -2,21 +2,21 @@
 
 namespace Templeiro;
 
+use Config;
+use Crypto;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
-use View;
-use Config;
+use ReflectionClass;
 use Request;
 use Session;
-use ReflectionClass;
 
-use Crypto;
+use View;
 
 class Templeiro
 {
@@ -66,17 +66,16 @@ class Templeiro
         // View::addLocation($locationTheme.$theme.'/views');
         // View::addNamespace('siravel-frontend', $locationTheme.$theme.'/views');
         // View::addNamespace('default-frontend', $locationTheme.'default/views');
-        
     }
 
     public function loadBoot()
     {
-
         $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
         $locationTheme = __DIR__.'/../'.'themes/';
 
         View::addLocation($locationTheme.$this->theme.'/views');
         View::addNamespace('siravel-frontend', $locationTheme.$this->theme.'/views');
+        View::addNamespace('cms-frontend', $locationTheme.$this->theme.'/views');
         View::addNamespace('default-frontend', $locationTheme.'default/views');
 
         /*
@@ -104,6 +103,54 @@ class Templeiro
             return "<?php echo Minify::stylesheet('".__DIR__."/../themes/".$this->theme."/assets/css/'.$expression); ?>";
             /* return "<?php echo Minify::stylesheet('../themes/".$this->theme."/assets/css/'.$expression); ?>"; */
         });
+        Blade::directive('menu', function ($expression) {
+            return "<?php echo Cms::menu($expression); ?>";
+        });
+
+        Blade::directive('block', function ($expression) {
+            $module = Cms::getModule();
+            return "<?php echo optional(\$".$module.")->block($expression); ?>";
+        });
+
+        Blade::directive('languages', function ($expression) {
+            return "<?php echo Cms::languageLinks($expression); ?>";
+        });
+
+        Blade::directive('modules', function ($expression) {
+            return "<?php echo Cms::moduleLinks($expression); ?>";
+        });
+
+        Blade::directive('widget', function ($expression) {
+            return "<?php echo Cms::widget($expression); ?>";
+        });
+
+        Blade::directive('promotion', function ($expression) {
+            return "<?php echo Cms::promotion($expression); ?>";
+        });
+
+        Blade::directive('image', function ($expression) {
+            return "<?php echo Cms::image($expression); ?>";
+        });
+
+        Blade::directive('image_link', function ($expression) {
+            return "<?php echo Cms::imageLink($expression); ?>";
+        });
+
+        Blade::directive('images', function ($expression) {
+            return "<?php echo Cms::images($expression); ?>";
+        });
+
+        Blade::directive('edit', function ($expression) {
+            return "<?php echo Cms::editBtn($expression); ?>";
+        });
+
+        Blade::directive('editBtn', function ($expression) {
+            return "<?php echo Cms::editBtnSecondary($expression); ?>";
+        });
+
+        Blade::directive('markdown', function ($expression) {
+            return "<?php echo Markdown::convertToHtml($expression); ?>";
+        });
     }
 
 
@@ -129,7 +176,6 @@ class Templeiro
 
     public function setTheme()
     {
-
     }
     public function title()
     {
@@ -180,6 +226,10 @@ class Templeiro
         // Return the layout View
         return $this->layout;
     }
+    public function view($content, $vars = [])
+    {
+        return $this->populateView($content, $vars);
+    }
 
     private function getContentView($content)
     {
@@ -196,7 +246,5 @@ class Templeiro
         }
         
         return View::make($content);
-
     }
-    
 }

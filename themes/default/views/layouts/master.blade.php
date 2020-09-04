@@ -42,7 +42,7 @@
                     <span class="nav-text">&copy; {{ date('Y') }}</span>
                 </li>
                 @can('siravel')
-                    <li class="nav-item"><a class="btn btn-sm btn-link" href="{{ url(config('cms.backend-route-prefix', 'cms').'/dashboard') }}">CMS</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-link" href="{{ url(config('siravel.backend-route-prefix', 'cms').'/dashboard') }}">CMS</a></li>
                     @if (isset($siravel))
                         @if (is_string($siravel))
                             {!! $siravel !!}

@@ -22,7 +22,6 @@ use Muleta\Traits\Providers\ConsoleTools;
 use Templeiro\Facades\Templeiro as TempleiroFacade;
 use Templeiro\Services\TempleiroService;
 
-
 class TempleiroProvider extends ServiceProvider
 {
     public $packageName = 'templeiro';
@@ -31,6 +30,7 @@ class TempleiroProvider extends ServiceProvider
 
     public static $aliasProviders = [
         'Templeiro' => \Templeiro\Facades\Templeiro::class,
+        'Cms' => \Templeiro\Facades\CmsServiceFacade::class,
     ];
 
     public static $providers = [
@@ -64,7 +64,6 @@ class TempleiroProvider extends ServiceProvider
         $this->loadLogger();
 
         $this->app['templeiro']->loadBoot();
-
     }
 
     /**
@@ -138,6 +137,14 @@ class TempleiroProvider extends ServiceProvider
         //         return route('rica.templeiro.assets').'?path='.urlencode($path);
         //     }
         // }
+
+
+
+        $this->app->singleton(
+            'cms', function () {
+                return new CmsService();
+            }
+        );
     }
 
     /**
@@ -174,7 +181,6 @@ class TempleiroProvider extends ServiceProvider
 
         $this->loadViews();
         $this->loadTranslations();
-
     }
 
     private function loadViews()
@@ -187,7 +193,6 @@ class TempleiroProvider extends ServiceProvider
             $viewsPath => base_path('resources/views/vendor/templeiro'),
             ], ['views',  'sitec', 'sitec-views']
         );
-
     }
     
     private function loadTranslations()
@@ -205,7 +210,7 @@ class TempleiroProvider extends ServiceProvider
 
 
     /**
-     * 
+     *
      */
     private function loadLogger()
     {
@@ -217,5 +222,4 @@ class TempleiroProvider extends ServiceProvider
             ]
         );
     }
-
 }
