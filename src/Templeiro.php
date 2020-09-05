@@ -54,24 +54,17 @@ class Templeiro
      */
     protected $layout = false;
 
-    protected $theme = 'desktemplate';
+    protected $theme = 'default';
 
     protected $boot = false;
 
     public function __construct($theme)
     {
-        // $this->theme = $theme;
-
-        // $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
-        // $locationTheme = __DIR__.'/../'.'themes/';
-
-        // View::addLocation($locationTheme.$theme.'/views');
-        // View::addNamespace('siravel-frontend', $locationTheme.$theme.'/views');
-        // View::addNamespace('default-frontend', $locationTheme.'default/views');
+        $this->theme = $theme;
     }
     public function setTheme($theme)
     {
-        // $this->theme = $theme;
+        $this->theme = $theme;
     }
 
     public function loadBoot()
