@@ -1,12 +1,3 @@
-@extends('siravel-frontend::layouts.master')
-
-@if (isset($page))
-    @section('seoDescription') {{ $page->seo_description }} @endsection
-    @section('seoKeywords') {{ $page->seo_keywords }} @endsection
-@endif
-
-@section('content')
-
 <div class="homepage-banner">
     <h1>{{ config('app.name') }}</h1>
     <p class="lead">Fluent, Minimalism</p>
@@ -57,10 +48,3 @@
     @endif
 
 </div>
-@endsection
-
-@section('siravel')
-    @if (isset($page))
-        @edit('pages', $page->id)
-    @endif
-@endsection

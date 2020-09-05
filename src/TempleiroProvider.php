@@ -59,11 +59,15 @@ class TempleiroProvider extends ServiceProvider
         // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
         $this->app->booted(function () {
             $this->routes();
+            
+            $this->app->singleton(
+                'templeiro', function () {
+                    return new Templeiro(Config::get('siravel.frontend-theme', 'default'));
+                }
+            );
         });
 
         $this->loadLogger();
-
-        $this->app['templeiro']->loadBoot();
     }
 
     /**
@@ -99,26 +103,12 @@ class TempleiroProvider extends ServiceProvider
         // Register Migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $this->app->singleton(
-            'templeiro', function () {
-                return new Templeiro(Config::get('siravel.frontend-theme', 'default'));
-            }
-        );
         
         /*
         |--------------------------------------------------------------------------
         | Register the Utilities
         |--------------------------------------------------------------------------
         */
-        /**
-         * Singleton Templeiro;
-         */
-        $this->app->singleton(
-            TempleiroService::class, function ($app) {
-                Log::channel('sitec-templeiro')->info('Singleton Templeiro;');
-                return new TempleiroService(\Illuminate\Support\Facades\Config::get('sitec.templeiro'));
-            }
-        );
 
         // Register commands
         $this->registerCommandFolders(

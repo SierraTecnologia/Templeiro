@@ -63,7 +63,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
-  background: url('../img/bg1.jpg') no-repeat center center fixed;
+  background: url('http://ricardosierra.com.br/img/bg1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -394,7 +394,7 @@ iframe {
   width: 99%;
   margin: 0 auto;
   overflow-y: scroll;
-  background: url('../img/bg-card2.png') repeat-x right top #f4f4f4;
+  background: url('http://ricardosierra.com.br/img/bg-card2.png') repeat-x right top #f4f4f4;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
@@ -639,7 +639,7 @@ iframe {
   border: none;
   height: 1px;
   width: 100%;
-  background: url('../img/hr1.png') no-repeat center center;
+  background: url('http://ricardosierra.com.br/img/hr1.png') no-repeat center center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -649,7 +649,7 @@ iframe {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   padding: 10px;
-  background: url('../img/bg-btn.png') no-repeat center center #08aeac;
+  background: url('http://ricardosierra.com.br/img/bg-btn.png') no-repeat center center #08aeac;
 }
 .vcard-profile-description-ft-item p {
   margin-bottom: 0;
@@ -1013,7 +1013,7 @@ iframe {
   -moz-transform: translateY(0px);
 }
 .project-item a {
-  cursor: url('../img/projects2.cur.html'), projetos !important;
+  cursor: url('http://ricardosierra.com.br/img/projects2.cur.html'), projetos !important;
   border-radius: 6px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1141,8 +1141,8 @@ span.see-more {
   text-decoration: none;
 }
 .blog-item-thumb a {
-  cursor: url('../img/projects.cur.html'), projetos !important;
-  -moz-cursor: url('../img/projects.cur.html'), projetos !important;
+  cursor: url('http://ricardosierra.com.br/img/projects.cur.html'), projetos !important;
+  -moz-cursor: url('http://ricardosierra.com.br/img/projects.cur.html'), projetos !important;
 }
 .blog-item-thumb img {
   width: 100%;
@@ -1320,7 +1320,7 @@ span.see-more {
   left: 0;
   width: 100%;
   height: 100%;
-  cursor: url('../img/projects.cur.html'), projetos !important;
+  cursor: url('http://ricardosierra.com.br/img/projects.cur.html'), projetos !important;
 }
 /* ==========================================================
 ! 17. SECTION: Contact

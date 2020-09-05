@@ -98,7 +98,7 @@
                     <p>{{ trans('homepage.service_item6_description') }}</p>
                 </div>
             </div>
-            <?php /* / END SINGLE SERVICES DESIGN AREA */ ?>
+            <?php /* / END SIx  NGLE SERVICES DESIGN AREA */ ?>
         </div>
     </div>
 </section>
@@ -119,20 +119,22 @@
             <?php /* START SINGLE TEAM DESIGN AREA */ ?>
             <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                 <div class="single-team">
-                    <img src="https://www.gravatar.com/avatar/{{ md5('matheus@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
-                        'name' => 'Matheus Faroni'
+                    <img src="https://www.gravatar.com/avatar/{{ md5('alessandrobm1988@gmail.com') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
+                        'name' => 'Alessandro'
                     ]) !!}">
                     <div class="team-description">
-                        <h4>Matheus Faroni</h4>
+                        <h4>Alessandro</h4>
                         <h6 class="text-muted">{{ trans('homepage.team_item1_work')}}</h6>
                         <div class="team-social">
                             <ul>
-                                <li><a href="https://www.facebook.com/matheusfaroni" target="_BLANK"><i class="fa fa-facebook"></i></a>
+                                <li><a href="https://alessandromelo.com.br/" target="_BLANK"><i class="fa fa-user"></i></a>
+                                </li>
+                                <?php /*<li><a href="https://www.facebook.com/matheusfaroni" target="_BLANK"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li><a href="https://twitter.com/faroniii" target="_BLANK"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li><a href="https://www.instagram.com/faroniii" target="_BLANK"><i class="fa fa-instagram"></i></a>
-                                </li>
+                                </li>*/ ?>
                             </ul>
                         </div>
                     </div>
@@ -142,20 +144,20 @@
             <?php /* START SINGLE TEAM DESIGN AREA */ ?>
             <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
                 <div class="single-team">
-                    <img src="https://www.gravatar.com/avatar/{{ md5('rafael@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
-                        'name' => 'Rafael Bernardo'
+                    <img src="https://www.gravatar.com/avatar/{{ md5('ana@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
+                        'name' => 'Ana Clara Nogueira'
                     ]) !!}">
                     <div class="team-description">
-                        <h4>Rafael Bernardo</h4>
+                        <h4>Ana Clara Nogueira</h4>
                         <h6 class="text-muted">{{ trans('homepage.team_item2_work')}}</h6>
                         <div class="team-social">
                             <ul>
-                                <li><a href="https://www.facebook.com/rafilkmp3" target="_BLANK"><i class="fa fa-facebook"></i></a>
+                            <?php /*<li><a href="https://www.facebook.com/rafilkmp3" target="_BLANK"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li><a href="https://github.com/rafilkmp3" target="_BLANK"><i class="fa fa-github"></i></a>
                                 </li>
                                 <li><a href="https://www.instagram.com/rafilkmp3/" target="_BLANK"><i class="fa fa-instagram"></i></a>
-                                </li>
+                                </li>*/ ?>
                             </ul>
                         </div>
                     </div>
@@ -165,20 +167,20 @@
             <?php /* START SINGLE TEAM DESIGN AREA */ ?>
             <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                 <div class="single-team">
-                    <img src="https://www.gravatar.com/avatar/{{ md5('charley@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
-                        'name' => 'Charley Oliveira'
+                    <img src="https://www.gravatar.com/avatar/{{ md5('teixeira@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
+                        'name' => 'Rodrigo Teixeira'
                     ]) !!}">
                     <div class="team-description">
-                        <h4>Charley Oliveira</h4>
-                        <h6 class="text-muted">{{ trans('homepage.team_item3_work')}}</h6>
+                        <h4>Rodrigo Teixeira</h4>
+                        <h6 class="text-muted">{{ trans('homepage.team_item5_work')}}</h6>
                         <div class="team-social">
-                            <ul>
+                            <ul><?php /*
                                 <li><a href="https://twitter.com/cryprogramador" target="_BLANK"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li><a href="https://github.com/charleycesar" target="_BLANK"><i class="fa fa-github"></i></a>
                                 </li>
                                 <li><a href="https://www.instagram.com/charleycesar/" target="_BLANK"><i class="fa fa-instagram"></i></a>
-                                </li>
+                                </li>*/ ?>
                             </ul>
                         </div>
                     </div>
@@ -198,6 +200,30 @@
                             <ul>
                                 <li><a href="http://ricardosierra.com.br" target="_BLANK"><i class="fa fa-user"></i></a>
                                 </li>
+                                <li><a href="https://twitter.com/sierra91jb" target="_BLANK"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://github.com/ricardorsierra" target="_BLANK"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li><a href="https://www.instagram.com/ricardorsierra/" target="_BLANK"><i class="fa fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php /* / END SINGLE TEAM DESIGN AREA */ ?>
+            <?php /* / END SINGLE TEAM DESIGN AREA */ ?>
+            <?php /* START SINGLE TEAM DESIGN AREA
+            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                <div class="single-team">
+                    <img src="https://www.gravatar.com/avatar/{{ md5('ricardo@sierratecnologia.com.br') }}?s=500&d=mm" alt="{!! trans('homepage.team_alt_img', [
+                        'name' => 'Aline do Valle'
+                    ]) !!}"> <?php /* 500x700
+                    <div class="team-description">
+                        <h4>Aline do Valle</h4>
+                        <h6 class="text-muted">{{ trans('homepage.team_item1_work')}}</h6>
+                        <div class="team-social">
+                            <ul>
                                 <li><a href="https://twitter.com/sierra91jb" target="_BLANK"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li><a href="https://github.com/ricardorsierra" target="_BLANK"><i class="fa fa-github"></i></a>
@@ -336,7 +362,7 @@
                     <div class="single-contact-details">
                         <span class="lnr lnr-map-marker"></span>
                         <h4>{{ trans('homepage.contact_address') }}</h4>
-                        <p class="text-muted">Estrada do Morgado, Vargem Grande, Rio de Janeiro, Brasil</p>
+                        <p class="text-muted">Rua Barata Ribeiro, 348, Copacabana, Rio de Janeiro, Brasil</p>
                     </div>
                 </div>
             </div>

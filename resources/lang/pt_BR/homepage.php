@@ -100,10 +100,11 @@ return [
     
     'team_title' => 'Nosso Time',
     'team_description' => 'Possuimos uma equipe treinada para melhor atender a sua empresa',
-    'team_item1_work' => 'Comercial',
-    'team_item2_work' => 'Infra Estrutura',
+    'team_item1_work' => 'Marketing',
+    'team_item2_work' => 'Juridico',
     'team_item3_work' => 'Desenvolvedor',
-    'team_item4_work' => 'CEO/Fundador',
+    'team_item4_work' => 'CTO',
+    'team_item5_work' => 'Comercial',
     'team_alt_img' => 'Foto de perfil de :name',
 
     'contact_title' => 'Fale Conosco',

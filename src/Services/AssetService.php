@@ -3,6 +3,7 @@
 namespace Templeiro\Services;
 
 use App;
+use Crypto;
 use Exception;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Cache;
@@ -11,10 +12,9 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use Siravel;
 use Log;
+use Siravel;
 use SplFileInfo;
-use Crypto;
 
 class AssetService
 {
@@ -176,7 +176,7 @@ class AssetService
             // }
 
             // /**
-            //  * 
+            //  *
             //  */
 
             // if (!file_exists($filePath)) {
@@ -192,7 +192,6 @@ class AssetService
             if (is_null($contentType) || $contentType=='null') {
                 $contentType = $fileSystem->mimeType($filePath);
             }
-
             $headers = ['Content-Type' => $contentType];
 
             return response()->download($filePath, $fileName, $headers);

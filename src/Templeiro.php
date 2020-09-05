@@ -54,11 +54,13 @@ class Templeiro
      */
     protected $layout = false;
 
-    protected $theme = 'default';
+    protected $theme = 'desktemplate';
+
+    protected $boot = false;
 
     public function __construct($theme)
     {
-        $this->theme = $theme;
+        // $this->theme = $theme;
 
         // $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
         // $locationTheme = __DIR__.'/../'.'themes/';
@@ -67,9 +69,17 @@ class Templeiro
         // View::addNamespace('siravel-frontend', $locationTheme.$theme.'/views');
         // View::addNamespace('default-frontend', $locationTheme.'default/views');
     }
+    public function setTheme($theme)
+    {
+        // $this->theme = $theme;
+    }
 
     public function loadBoot()
     {
+        if ($this->boot) {
+            return ;
+        }
+        $this->boot = true;
         $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
         $locationTheme = __DIR__.'/../'.'themes/';
 
@@ -163,7 +173,7 @@ class Templeiro
      *
      * @return string
      */
-    public function asset($path, $contentType = 'null', $fullURL = false)
+    public function asset($path, $contentType = 'null', $fullURL = true)
     {
         if (!$fullURL) {
             return $filePath = __DIR__.'/../'.'themes/'.$this->theme.'/assets/'.$path;
@@ -174,9 +184,6 @@ class Templeiro
     }
 
 
-    public function setTheme()
-    {
-    }
     public function title()
     {
         return 'title';
@@ -191,6 +198,7 @@ class Templeiro
         if ($this->layout) {
             return ;
         }
+        $this->loadBoot();
         // Set the layout from the Config file
         $this->layout = View::make('siravel-frontend::layouts.master');
     }
@@ -236,7 +244,6 @@ class Templeiro
         if (!is_string($content)) {
             return $content;
         }
-
         if (View::exists('siravel-frontend::'.$content)) {
             return View::make('siravel-frontend::'.$content);
         }

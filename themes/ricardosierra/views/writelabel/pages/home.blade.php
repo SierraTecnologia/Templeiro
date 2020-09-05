@@ -1,8 +1,5 @@
-@extends('layouts.frontend')
 
-@section('content')
-
-    @include('partials.status-panel')
+@include('partials.status-panel')
     
 <?php /* Main Content
 ================================================== */ ?>
@@ -395,5 +392,3 @@
     </div>
 
 </section>
-
-@stop
