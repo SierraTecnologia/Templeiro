@@ -1,7 +1,7 @@
 <?php
 /**
  * @extends('app')
- * 
+ *
  * @section('content')
  * 	 <div class="title">SierraTecnologia</div>
  *   <div class="quote"></div>
@@ -77,7 +77,11 @@
 
     <!-- PAGE TITLE -->
     <title>SierraTecnologia &#8211; {{ trans('homepage.page_title') }}</title>
-
+    @themecss('magnific-popup.css')
+    @themecss('animate.min.css')
+    @themecss('style.css')
+    @themecss('responsive.css')
+    <?php /**
     {!! Minify::stylesheet([
         Templeiro::asset('bootstrap/css/bootstrap.min.css', 'text/css'),
         Templeiro::asset('fonts/font-awesome.css', 'text/css'),
@@ -88,7 +92,7 @@
         Templeiro::asset('css/style.css', 'text/css'),
         Templeiro::asset('css/responsive.css', 'text/css')
     ]) !!}
-    <?php /**
+
      * Após Awesome
      *  Templeiro::asset('fonts/linear-fonts.css', 'text/css')
      */
@@ -236,6 +240,23 @@
     </div>
     <!-- / END SCROOL UP DESIGN AREA -->
 
+@themejs('jquery-3.2.1.min.js')
+@themejs('jquery-migrate-3.0.0.js')
+
+@themejs('bootstrap.js')
+
+@themejs('jquery.appear.js')
+@themejs('jquery.mixitup.js')
+@themejs('jquery.magnific-popup.min.js')
+@themejs('jquery.stellar.min.js')
+@themejs('jquery.mb.YTPlayer.min.js')
+@themejs('jquery.waypoints.min.js')
+@themejs('jquery.counterup.min.js')
+@themejs('wow.min.js')
+@themejs('form-contact.js')
+@themejs('scripts.js')
+    <?php
+    /*
     {!! Minify::javascript([
         Templeiro::asset('js/jquery-3.2.1.min.js', 'application/javascript'),
         Templeiro::asset('js/jquery-migrate-3.0.0.js', 'application/javascript'),
@@ -251,8 +272,6 @@
         Templeiro::asset('js/form-contact.js', 'application/javascript'),
         Templeiro::asset('js/scripts.js', 'application/javascript')
     ]) !!}
-    <?php 
-    /*
 
         Templeiro::asset('owlcarousel/js/owl.carousel.min.js', 'application/javascript'),
     */
