@@ -5,13 +5,21 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
-            @menu('main', 'siravel-frontend::partials.main-menu')
-            <li class="nav-item"><a class="nav-link" href="{{ url('blog') }}">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('events') }}">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('faqs') }}">FAQs</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('gallery') }}">Gallery</a></li>
-            @modules()
-            @languages()
+            <?php /*@menu('main', 'siravel-frontend::partials.main-menu')*/?>
+            @if (Route::has('blog'))
+                <li class="nav-item"><a class="nav-link" href="{{ url('blog') }}">Blog</a></li>
+            @endif
+            @if (Route::has('Events'))
+                <li class="nav-item"><a class="nav-link" href="{{ url('events') }}">Events</a></li>
+            @endif
+            @if (Route::has('faqs'))
+                <li class="nav-item"><a class="nav-link" href="{{ url('faqs') }}">FAQs</a></li>
+            @endif
+            @if (Route::has('gallery'))
+                <li class="nav-item"><a class="nav-link" href="{{ url('gallery') }}">Gallery</a></li>
+            @endif
+            <?php /*@modules()
+            @languages() */?>
         </ul>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
