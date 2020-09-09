@@ -24,9 +24,10 @@ use Templeiro\Services\TempleiroService;
 
 class TempleiroProvider extends ServiceProvider
 {
-    public $packageName = 'templeiro';
-
     use ConsoleTools;
+
+    public $packageName = 'templeiro';
+    const pathVendor = 'sierratecnologia/templeiro';
 
     public static $aliasProviders = [
         'Templeiro' => \Templeiro\Facades\Templeiro::class,
