@@ -58,15 +58,17 @@ class TempleiroProvider extends ServiceProvider
         $this->registerDirectories();
 
         // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
-        $this->app->booted(function () {
-            $this->routes();
+        $this->app->booted(
+            function () {
+                $this->routes();
             
-            $this->app->singleton(
-                'templeiro', function () {
-                    return new Templeiro(Config::get('siravel.frontend-theme', 'default'));
-                }
-            );
-        });
+                $this->app->singleton(
+                    'templeiro', function () {
+                        return new Templeiro(Config::get('siravel.frontend-theme', 'default'));
+                    }
+                );
+            }
+        );
 
         $this->loadLogger();
     }

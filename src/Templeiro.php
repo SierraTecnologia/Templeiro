@@ -87,73 +87,103 @@ class Templeiro
         |--------------------------------------------------------------------------
         */
 
-        Blade::directive('theme', function ($expression) {
-            if (Str::startsWith($expression, '(')) {
-                $expression = substr($expression, 1, -1);
+        Blade::directive(
+            'theme', function ($expression) {
+                if (Str::startsWith($expression, '(')) {
+                    $expression = substr($expression, 1, -1);
+                }
+
+                $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
+
+                return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
             }
+        );
 
-            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
+        Blade::directive(
+            'themejs', function ($expression) {
+                return "<?php echo Minify::javascript('".__DIR__."/../themes/".$this->theme."/assets/js/'.$expression); ?>";
+                /* return "<?php echo Minify::javascript('../themes/".$this->theme."/assets/js/'.$expression); ?>"; */
+            }
+        );
 
-            return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
-        });
+        Blade::directive(
+            'themecss', function ($expression) {
+                return "<?php echo Minify::stylesheet('".__DIR__."/../themes/".$this->theme."/assets/css/'.$expression); ?>";
+                /* return "<?php echo Minify::stylesheet('../themes/".$this->theme."/assets/css/'.$expression); ?>"; */
+            }
+        );
+        Blade::directive(
+            'menu', function ($expression) {
+                return "<?php echo Cms::menu($expression); ?>";
+            }
+        );
 
-        Blade::directive('themejs', function ($expression) {
-            return "<?php echo Minify::javascript('".__DIR__."/../themes/".$this->theme."/assets/js/'.$expression); ?>";
-            /* return "<?php echo Minify::javascript('../themes/".$this->theme."/assets/js/'.$expression); ?>"; */
-        });
+        Blade::directive(
+            'block', function ($expression) {
+                $module = Cms::getModule();
+                return "<?php echo optional(\$".$module.")->block($expression); ?>";
+            }
+        );
 
-        Blade::directive('themecss', function ($expression) {
-            return "<?php echo Minify::stylesheet('".__DIR__."/../themes/".$this->theme."/assets/css/'.$expression); ?>";
-            /* return "<?php echo Minify::stylesheet('../themes/".$this->theme."/assets/css/'.$expression); ?>"; */
-        });
-        Blade::directive('menu', function ($expression) {
-            return "<?php echo Cms::menu($expression); ?>";
-        });
+        Blade::directive(
+            'languages', function ($expression) {
+                return "<?php echo Cms::languageLinks($expression); ?>";
+            }
+        );
 
-        Blade::directive('block', function ($expression) {
-            $module = Cms::getModule();
-            return "<?php echo optional(\$".$module.")->block($expression); ?>";
-        });
+        Blade::directive(
+            'modules', function ($expression) {
+                return "<?php echo Cms::moduleLinks($expression); ?>";
+            }
+        );
 
-        Blade::directive('languages', function ($expression) {
-            return "<?php echo Cms::languageLinks($expression); ?>";
-        });
+        Blade::directive(
+            'widget', function ($expression) {
+                return "<?php echo Cms::widget($expression); ?>";
+            }
+        );
 
-        Blade::directive('modules', function ($expression) {
-            return "<?php echo Cms::moduleLinks($expression); ?>";
-        });
+        Blade::directive(
+            'promotion', function ($expression) {
+                return "<?php echo Cms::promotion($expression); ?>";
+            }
+        );
 
-        Blade::directive('widget', function ($expression) {
-            return "<?php echo Cms::widget($expression); ?>";
-        });
+        Blade::directive(
+            'image', function ($expression) {
+                return "<?php echo Cms::image($expression); ?>";
+            }
+        );
 
-        Blade::directive('promotion', function ($expression) {
-            return "<?php echo Cms::promotion($expression); ?>";
-        });
+        Blade::directive(
+            'image_link', function ($expression) {
+                return "<?php echo Cms::imageLink($expression); ?>";
+            }
+        );
 
-        Blade::directive('image', function ($expression) {
-            return "<?php echo Cms::image($expression); ?>";
-        });
+        Blade::directive(
+            'images', function ($expression) {
+                return "<?php echo Cms::images($expression); ?>";
+            }
+        );
 
-        Blade::directive('image_link', function ($expression) {
-            return "<?php echo Cms::imageLink($expression); ?>";
-        });
+        Blade::directive(
+            'edit', function ($expression) {
+                return "<?php echo Cms::editBtn($expression); ?>";
+            }
+        );
 
-        Blade::directive('images', function ($expression) {
-            return "<?php echo Cms::images($expression); ?>";
-        });
+        Blade::directive(
+            'editBtn', function ($expression) {
+                return "<?php echo Cms::editBtnSecondary($expression); ?>";
+            }
+        );
 
-        Blade::directive('edit', function ($expression) {
-            return "<?php echo Cms::editBtn($expression); ?>";
-        });
-
-        Blade::directive('editBtn', function ($expression) {
-            return "<?php echo Cms::editBtnSecondary($expression); ?>";
-        });
-
-        Blade::directive('markdown', function ($expression) {
-            return "<?php echo Markdown::convertToHtml($expression); ?>";
-        });
+        Blade::directive(
+            'markdown', function ($expression) {
+                return "<?php echo Markdown::convertToHtml($expression); ?>";
+            }
+        );
     }
 
 

@@ -49,8 +49,8 @@ class CmsService
     /**
      * Get a file download response
      *
-     * @param  string $fileName
-     * @param  string $realFileName
+     * @param string $fileName
+     * @param string $realFileName
      *
      * @return Response
      */
@@ -76,8 +76,8 @@ class CmsService
     /**
      * Links for each supported language
      *
-     * @param  string $linkClass
-     * @param  string $itemClass
+     * @param string $linkClass
+     * @param string $itemClass
      *
      * @return string
      */
@@ -234,7 +234,7 @@ class CmsService
     /**
      * SierraTecnologia CMS url generator - handles custom cms url
      *
-     * @param  string $string
+     * @param string $string
      *
      * @return string
      */
@@ -248,7 +248,7 @@ class CmsService
     /**
      * SierraTecnologia CMS route generator
      *
-     * @param  string $string
+     * @param string $string
      *
      * @return string
      */
@@ -312,11 +312,13 @@ class CmsService
     public function collectSiteMapItems()
     {
         $itemCollection = [];
-        $modules = config('site-mapped-modules', [
+        $modules = config(
+            'site-mapped-modules', [
             'blog' => 'Templeiro\Repositories\BlogRepository',
             'page' => 'Templeiro\Repositories\PageRepository',
             'events' => 'Templeiro\Repositories\EventRepository',
-        ]);
+            ]
+        );
 
         foreach ($modules as $module => $repository) {
             try {

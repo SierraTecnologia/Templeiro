@@ -91,8 +91,8 @@ trait MenuServiceTrait
     /**
      * Sort by an existing set of keys
      *
-     * @param  collection $links
-     * @param  array $keys
+     * @param collection $links
+     * @param array      $keys
      *
      * @return collection
      */

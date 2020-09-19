@@ -71,7 +71,7 @@ trait ModuleServiceTrait
     /**
      * Module Links.
      *
-     * @param array $ignoredModules   A list of ignored links
+     * @param array $ignoredModules A list of ignored links
      *
      * @return string
      */
