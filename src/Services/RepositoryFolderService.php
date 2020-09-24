@@ -47,7 +47,7 @@ class RepositoryFolderService
 
     }
 
-    public static function readFolderPackages($item, $realPath)
+    public static function readFolderPackages($item, string $realPath)
     {
         if (in_array($item, ['.', '..'])) {
             return;
