@@ -4,7 +4,7 @@
                 {!! Form::text('search', request()->get('search'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
             </div>
             <div class="col-md-2">
-                {!! Form::submit('Sumbit', ['class' => 'btn btn-block btn-default']) !!}
+                {!! Form::submit('Sumbit', ['class' => 'btn btn-block btn-secondary']) !!}
             </div>
     {!! Form::close() !!}
 </div>

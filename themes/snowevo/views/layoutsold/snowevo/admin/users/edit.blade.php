@@ -11,8 +11,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box card box-primary">
-		<div class="box-body card-body">
+	<div class="box panel card box-primary panel-primary card-primary">
+		<div class="box-body panel-body card-body">
 			<form action="{{url('/admin/users/update')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "user_id" value = "{{$user->id}}">
@@ -34,11 +34,11 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="box card box-primary">
-				<div class="box-header card-header">
+			<div class="box panel card box-primary panel-primary card-primary">
+				<div class="box-header panel-header card-header">
 					<h3>{{$user->name}} {{ trans('admin.roles') }}</h3>
 				</div>
-				<div class="box-body card-body">
+				<div class="box-body panel-body card-body">
 					<form action="{{url('/admin/users/addRole')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">
@@ -71,11 +71,11 @@
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="box card box-primary">
-				<div class="box-header card-header">
+			<div class="box panel card box-primary panel-primary card-primary">
+				<div class="box-header panel-header card-header">
 					<h3>{{$user->name}} {{ trans('admin.permissions') }}</h3>
 				</div>
-				<div class="box-body card-body">
+				<div class="box-body panel-body card-body">
 					<form action="{{url('/admin/users/addPermission')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">

@@ -1,11 +1,11 @@
 @extends('scaffold-interface.layouts.app')
 @section('content')
 <section class="content">
-	<div class="box card box-primary">
-		<div class="box-header card-header">
+	<div class="box panel card box-primary panel-primary card-primary">
+		<div class="box-header panel-header card-header">
 			<h3>All Permissions</h3>
 		</div>
-		<div class="box-body card-body">
+		<div class="box-body panel-body card-body">
 			<a href="{{url('scaffold-permissions/create')}}" class = "btn btn-success"><i class="fa fa-plus fa-md" aria-hidden="true"></i> New</a>
 			<table class="table table-striped">
 				<head>

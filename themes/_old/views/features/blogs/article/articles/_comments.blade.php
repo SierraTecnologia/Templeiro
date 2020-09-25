@@ -3,7 +3,7 @@
         <div class="panel-heading">
             {{ $comment->user->name }} says...
 
-            <span class="pull-right">{{ $comment->created_at->diffForHumans() }}</span>
+            <span class="float-right">{{ $comment->created_at->diffForHumans() }}</span>
         </div>
 
         <div class="panel-body">

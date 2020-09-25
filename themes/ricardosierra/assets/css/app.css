@@ -1460,7 +1460,7 @@ img {
   height: auto;
 }
 
-.img-circle {
+.rounded-circle {
   border-radius: 50%;
 }
 

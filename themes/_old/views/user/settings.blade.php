@@ -39,9 +39,9 @@
                     @endif
 
                     <div class="col-md-12 form-group">
-                        <a class="btn btn-default pull-left" href="{{ URL::previous() }}">{!! trans('features.cancel') !!}</a>
-                        <button class="btn btn-primary pull-right" type="submit">{!! trans('features.save') !!}</button>
-                        <a class="btn btn-info pull-right" href="/user/password">{!! trans('features.changePassword') !!}</a><br>
+                        <a class="btn btn-secondary float-left" href="{{ URL::previous() }}">{!! trans('features.cancel') !!}</a>
+                        <button class="btn btn-primary float-right" type="submit">{!! trans('features.save') !!}</button>
+                        <a class="btn btn-info float-right" href="/user/password">{!! trans('features.changePassword') !!}</a><br>
                     </div>
                 </form>
             </div>

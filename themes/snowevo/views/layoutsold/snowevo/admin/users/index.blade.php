@@ -10,9 +10,9 @@
 	</ol>
 </section>
 <section class="content">
-<div class="box card box-primary">
-	<div class="box-body card-body">
-            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{url('/admin/users/create')}}"><i class="fa fa-plus fa-md" aria-hidden="true"></i> {{ trans('default.new') }}</a>
+<div class="box panel card box-primary panel-primary card-primary">
+	<div class="box-body panel-body card-body">
+            <a class="btn btn-primary float-right" style="margin-top: -10px;margin-bottom: 5px" href="{{url('/admin/users/create')}}"><i class="fa fa-plus fa-md" aria-hidden="true"></i> {{ trans('default.new') }}</a>
 		<table class = "table table-hover">
 		<thead>
 			<th>{{ trans('default.name') }}</th>

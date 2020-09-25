@@ -56,7 +56,7 @@
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <img src="{{ Gravatar::src(Auth::user()->email, 150) }}"
-                                         class="img-circle" alt="User Image"/>
+                                         class="rounded-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
@@ -64,11 +64,11 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    {{--<div class="pull-left">--}}
-                                        {{--<a href="#" class="btn btn-default btn-flat">Profile</a>--}}
+                                    {{--<div class="float-left">--}}
+                                        {{--<a href="#" class="btn btn-secondary btn-flat">Profile</a>--}}
                                     {{--</div>--}}
-                                    <div class="pull-right">
-                                        <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
+                                    <div class="float-right">
+                                        <a href="{!! url('/logout') !!}" class="btn btn-secondary btn-flat"
                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             {!! trans('words.signOut') !!}
                                         </a>

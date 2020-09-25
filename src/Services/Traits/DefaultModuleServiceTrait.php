@@ -66,7 +66,7 @@ trait DefaultModuleServiceTrait
 
         if ($promotion) {
             if (Gate::allows('cms', Auth::user())) {
-                $promotion->details .= '<a href="'.url(config('siravel.backend-route-prefix', 'cms').'/promotions/'.$promotion->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
+                $promotion->details .= '<a href="'.url(config('siravel.backend-route-prefix', 'cms').'/promotions/'.$promotion->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-secondary"><span class="fa fa-pencil"></span> Edit</a>';
             }
 
             if ($promotion->is_published) {

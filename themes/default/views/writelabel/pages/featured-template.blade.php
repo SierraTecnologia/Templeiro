@@ -8,7 +8,7 @@
 <div class="container">
 
     <div class="jumbotron">
-        <img class="thumbnail img-responsive" src="{{ $page->hero_image_url }}" alt="">
+        <img class="thumbnail img-fluid" src="{{ $page->hero_image_url }}" alt="">
     </div>
 
     <h2>{{ $page->title }}</h2>

@@ -11,8 +11,8 @@
 	</ol>
 </section>
 <section class="content">
-	<div class="box card box-primary">
-		<div class="box-body card-body">
+	<div class="box panel card box-primary panel-primary card-primary">
+		<div class="box-body panel-body card-body">
 			<form action="{{url('/admin/aparts/update')}}" method = "post">
 				{!! csrf_field() !!}
 				<input type="hidden" name = "apart_id" value = "{{$apart->id}}">

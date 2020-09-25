@@ -16,7 +16,7 @@
             <?php /* START ABOUT IMAGE DESIGN AREA */ ?>
             <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
                 <div class="about-image">
-                    <img src="images/about.png" alt="" class="img-responsive">
+                    <img src="images/about.png" alt="" class="img-fluid">
                 </div>
             </div>
             <?php /* / END ABOUT IMAGE DESIGN AREA */ ?>

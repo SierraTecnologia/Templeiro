@@ -158,7 +158,7 @@
                     <article>
                         <aside class>
                             <h2>{!! trans('snowevo.winter') !!} 2018<br/>{!! trans('snowevo.europe') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="img/media/2016/card1.png" data-fancybox-group="snowtrip_card1" title="Winter 2017 {!! trans('snowevo.europe') !!}"><img src="img/media/2016/card1.png"></a>
                             </div>
                             <ul>
@@ -172,7 +172,7 @@
 
                         <aside class>
                             <h2>{!! trans('snowevo.pagueComPay') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="{!! Siravel::img_lang('img/media/2016/card2.png') !!}" data-fancybox-group="snowtrip_card2" title="{!! trans('snowevo.pagueComPay') !!}"><img src="{!! Siravel::img_lang('img/media/2016/card2.png') !!}"></a>
                             </div>
                             <ul>
@@ -186,7 +186,7 @@
 
                         <aside class>
                             <h2>{!! trans('snowevo.pagueComPay') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="{!! Siravel::img_lang('img/media/2016/card3.png') !!}" data-fancybox-group="snowtrip_card3" title="Açaí em Andorra"><img src="{!! Siravel::img_lang('img/media/2016/card3.png') !!}"></a>
                             </div>
                             <ul>
@@ -202,7 +202,7 @@
                     <article>
                         <aside class>
                             <h2>LES DEUX ALPES<br/>{!! trans('snowevo.franca') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 {!! trans('snowevo.summercamps') !!}<h1>265€</h1>
                                 <p><strong>{!! trans('snowevo.apartamentos') !!} Odalys</strong></p>
 
@@ -223,7 +223,7 @@
                         </aside>
                         <aside class>
                             <h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 {!! trans('snowevo.pasDeLaCasa') !!}<h1>250€</h1>
                                 <p><strong>{!! trans('snowevo.apartamentos') !!} Frontera Blanca</strong></p>
                                 <a class="fancybox icon-zoom" href="img/media/2016/card5.png" data-fancybox-group="snowtrip_card5" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card5.png"></a>
@@ -242,7 +242,7 @@
                         </aside>
                         <aside class>
                             <h2>{!! trans('snowevo.andorra') !!}<br/>CERDANYA</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 {!! trans('snowevo.pirineus') !!}<h1>475€</h1>
                                 <p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>
                                 <a class="fancybox icon-zoom" href="{!! Siravel::img_lang('img/media/2016/card6.png') !!}" data-fancybox-group="snowtrip_card6" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="{!! Siravel::img_lang('img/media/2016/card6.png') !!}"></a>
@@ -262,7 +262,7 @@
 
                         <aside class>
                             <h2>{!! trans('snowevo.heliski') !!}<br/>{!! trans('snowevo.andorra') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 Ransol e Arcalis<h1>240€</h1>
                                 <p><strong>Powder {!! trans('snowevo.andorra') !!}</strong></p>
                                 <a class="fancybox icon-zoom" href="img/media/2016/card7.jpg" data-fancybox-group="snowtrip_card7" title="{!! trans('snowevo.heliski') !!} {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card7.jpg"></a>
@@ -278,7 +278,7 @@
                         </aside>
                         <aside class>
                             <h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 {!! trans('snowevo.privatebus') !!}<h1>+ 376 368118</h1>
                                 <p><strong>{!! trans('snowevo.pirineusEAlpes') !!}</strong></p>
                                 <p></p>
@@ -295,7 +295,7 @@
 
                         <aside class>
                             <h2>Comunica<br/>{!! trans('snowevo.andorra') !!}</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 {!! trans('snowevo.ofertaCartao') !!}<h1>30€</h1>
                                 <p><strong>Andorra Telecom</strong></p>
                                 <a class="fancybox icon-zoom" href="img/media/2016/card9.png" data-fancybox-group="snowtrip_card9" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card9.png"></a>
@@ -313,7 +313,7 @@
                     <?php /* {{--<article>--}}
                         {{--<aside class>--}}
                             {{--<h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--El Tarter<h1>450€</h1>--}}
                                 {{--<p><strong>Moutain Hostel</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card10.png" data-fancybox-group="snowtrip_card10" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card10.png"></a>--}}
@@ -334,7 +334,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.pasDeLaCasa') !!}<h1>795€</h1>--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card11.png" data-fancybox-group="snowtrip_card11" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card11.png"></a>--}}
@@ -352,7 +352,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.pasDeLaCasa') !!}<h1>490€</h1>--}}
                                 {{--<p><strong>Hotel Sporting</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card12.png" data-fancybox-group="snowtrip_card12" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card12.png"></a>--}}
@@ -373,7 +373,7 @@
                     {{--<article>--}}
                         {{--<aside class>--}}
                             {{--<h2>Les Trois Vallees<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--Courchevel<h1>480€</h1>--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!} Le Moriond</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card13.png" data-fancybox-group="snowtrip_card13" title="Les Trois Vallees {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card13.png"></a>--}}
@@ -389,7 +389,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Chamonix<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--Montblanc<h1>325€</h1>--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card14.png" data-fancybox-group="snowtrip_card14" title="Chamonix {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card14.png"></a>--}}
@@ -406,7 +406,7 @@
 
                         {{--<aside class>--}}
                             {{--<h2>Portes du Soleil<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--Avoriaz1800<h1>500€</h1>--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card25.png" data-fancybox-group="snowtrip_card25" title="Portes du Soleil {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card25.png"></a>--}}
@@ -424,7 +424,7 @@
                     {{--<article>--}}
                         {{--<aside class>--}}
                             {{--<h2>Grandvalira<br/>{!! trans('snowevo.andorra') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.pasDeLaCasa') !!}<h1>265€</h1>--}}
                                 {{--<p><strong>Apartamentos K2</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card16.png" data-fancybox-group="snowtrip_card16" title="Grandvalira {!! trans('snowevo.andorra') !!}"><img src="img/media/2016/card16.png"></a>--}}
@@ -440,7 +440,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Les Trois Valleés<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>450€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card17.png" data-fancybox-group="snowtrip_card17" title="Les Trois Valleés {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card17.png"></a>--}}
@@ -456,7 +456,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Valthorens<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>470€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card18.png" data-fancybox-group="snowtrip_card18" title="Valthorens {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card18.png"></a>--}}
@@ -474,7 +474,7 @@
                     {{--<article>--}}
                         {{--<aside class>--}}
                             {{--<h2>Portes du Soleil<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>430€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card19.png" data-fancybox-group="snowtrip_card19" title="Portes du Soleil {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card19.png"></a>--}}
@@ -490,7 +490,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Les 2 Alpes<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>390€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card20.png" data-fancybox-group="snowtrip_card20" title="Les 2 Alpes {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card20.png"></a>--}}
@@ -506,7 +506,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Paradiski<br/>{!! trans('snowevo.franca') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--La Plagne<h1>700€</h1>--}}
                                 {{--<p><strong>Chalet *****</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card21.jpg" data-fancybox-group="snowtrip_card21" title="Paradiski {!! trans('snowevo.franca') !!}"><img src="img/media/2016/card21.jpg"></a>--}}
@@ -526,7 +526,7 @@
                     {{--<article>--}}
                         {{--<aside class>--}}
                             {{--<h2>Davos Klosters<br/>{!! trans('snowevo.suica') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>500€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card22.png" data-fancybox-group="snowtrip_card22" title="Davos Klosters {!! trans('snowevo.suica') !!}"><img src="img/media/2016/card22.png"></a>--}}
@@ -542,7 +542,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Flims Laax Falera<br/>{!! trans('snowevo.suica') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>520€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card23.png" data-fancybox-group="snowtrip_card23" title="Flims Laax Falera {!! trans('snowevo.suica') !!}"><img src="img/media/2016/card23.png"></a>--}}
@@ -558,7 +558,7 @@
                         {{--</aside>--}}
                         {{--<aside class>--}}
                             {{--<h2>Zermatt<br/>{!! trans('snowevo.suica') !!}</h2>--}}
-                            {{--<div class="box card">--}}
+                            {{--<div class="box panel car">--}}
                                 {{--{!! trans('snowevo.aPartirDe', ['num'=>'<h1>485€</h1>']) !!}--}}
                                 {{--<p><strong>{!! trans('snowevo.apartamentos') !!}</strong></p>--}}
                                 {{--<a class="fancybox icon-zoom" href="img/media/2016/card24.png" data-fancybox-group="snowtrip_card24" title="Zermatt {!! trans('snowevo.suica') !!}"><img src="img/media/2016/card24.png"></a>--}}
@@ -576,7 +576,7 @@
                     <article>
                         <aside class>
                             <h2>Snow App<br/>Onthesnow</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="img/media/2016/card25.jpg" data-fancybox-group="snowtrip_card25" title="Onthesnow"><img src="img/media/2016/card25.jpg"></a>
                             </div>
                             <ul>
@@ -590,7 +590,7 @@
                         </aside>
                         <aside class>
                             <h2>Snow App<br/>Snow FORECAST</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="img/media/2016/card26.jpg" data-fancybox-group="snowtrip_card26" title="Snow FORECAST"><img src="img/media/2016/card26.jpg"></a>
                             </div>
                             <ul>
@@ -604,7 +604,7 @@
                         </aside>
                         <aside class>
                             <h2>Snow App<br/>Snocru</h2>
-                            <div class="box card">
+                            <div class="box panel car">
                                 <a class="fancybox icon-zoom" href="img/media/2016/card27.jpg" data-fancybox-group="snowtrip_card27" title="Snocru"><img src="img/media/2016/card27.jpg"></a>
                             </div>
                             <ul>

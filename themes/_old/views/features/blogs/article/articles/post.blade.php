@@ -9,7 +9,7 @@
                     <div class="panel-heading">
                         {{ $post->title }} - <small>by {{ $post->user->name }}</small>
 
-                        <span class="pull-right">
+                        <span class="float-right">
                             {{ $post->created_at->toDayDateTimeString() }}
                         </span>
                     </div>

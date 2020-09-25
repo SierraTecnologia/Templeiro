@@ -7,7 +7,7 @@
 
     <div class="container">
 
-        <h1 class="page-header">{!! $blog->title !!} <span class="pull-right">{!! \Carbon\Carbon::parse($blog->published_at)->format('d M, Y') !!}</span></h1>
+        <h1 class="page-header">{!! $blog->title !!} <span class="float-right">{!! \Carbon\Carbon::parse($blog->published_at)->format('d M, Y') !!}</span></h1>
 
         <div class="entry-row">
             {!! $blog->entry !!}

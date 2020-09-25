@@ -98,7 +98,7 @@
                             <p>{!! $post->introduction !!}</p>
 
                             <p>
-                                <a class="btn btn-mini btn-default"
+                                <a class="btn btn-mini btn-secondary"
                                 href="{{url('news/'.$post->slug.'')}}">Read more</a>
                             </p>
                         </div>

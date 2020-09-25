@@ -12,7 +12,7 @@
             <form method="POST" action="/subscription">
                 {!! csrf_field() !!}
 
-                @include('partials.errors')
+                @include('pedreiro::partials.errors')
                 @include('partials.status')
 
                 @if (!empty($plans))
@@ -29,7 +29,7 @@
                 {!! Form::checkbox('agree', 'Y') !!}
 
                 <div class="col-md-12 form-group">
-                    <button class="btn btn-primary pull-right" type="submit">{!! trans('words.euConcordo') !!}</button>
+                    <button class="btn btn-primary float-right" type="submit">{!! trans('words.euConcordo') !!}</button>
                 </div>
             </form>
 

@@ -85,9 +85,9 @@
 
             <div class="resume-buttons header-page-buttons">
             <?php /* /Download CV button *//* ?>
-            <a href="index.html#" class="btn btn-default btn-default2"><i class="fa fa-download"></i>&nbsp; {{ trans('resume.download') }}</a>
+            <a href="index.html#" class="btn btn-secondary btn-default2"><i class="fa fa-download"></i>&nbsp; {{ trans('resume.download') }}</a>
             <?php /* Get in Touch button *//* ?>
-            <a href="index.html#page-contact" class="btn btn-default btn-default2 link-page"><i class="fa fa-download"></i>&nbsp;  Get in Touch</a>
+            <a href="index.html#page-contact" class="btn btn-secondary btn-default2 link-page"><i class="fa fa-download"></i>&nbsp;  Get in Touch</a>
             </div>
 
             <h2 class="section-title2"><i class="fa fa-flag"></i>&nbsp; {!! trans('vcard.workExperience') !!}</h2>
@@ -168,9 +168,9 @@
             <div class="page-footer">
             <div class="resume-buttons">
             <?php /* Download CV button *//* ?>
-            <a href="index.html#" class="btn btn-default btn-default2"><i class="fa fa-download"></i>&nbsp; {{ trans('resume.download') }}</a>
+            <a href="index.html#" class="btn btn-secondary btn-default2"><i class="fa fa-download"></i>&nbsp; {{ trans('resume.download') }}</a>
             <?php /* Get in Touch button *//* ?>
-            <a href="index.html#page-contact" class="btn btn-default btn-default2 link-page"><i class="fa fa-download"></i>&nbsp;  Get in Touch</a>
+            <a href="index.html#page-contact" class="btn btn-secondary btn-default2 link-page"><i class="fa fa-download"></i>&nbsp;  Get in Touch</a>
             </div>
             <?php /* Quote *//* ?>
             <p class="footer-quote">"The best way to predict the future is to create it" <br/><i>Peter Drucker</i></p>
@@ -380,7 +380,7 @@
                 <?php /* /Form Field */ ?>
                 <?php /* Form Field */ ?>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default form-send" value="{{ trans('contact.send') }}">
+                    <input type="submit" class="btn btn-secondary form-send" value="{{ trans('contact.send') }}">
                 </div>
                 <?php /* /Form Field */ ?>
             {{ Form:: close() }}

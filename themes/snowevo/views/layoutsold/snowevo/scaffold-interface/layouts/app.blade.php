@@ -67,15 +67,15 @@
 								<ul class="dropdown-menu">
 									<!-- User image -->
 									<li class="user-header">
-										<img src="http://ahloman.net/wp-content/uploads/2013/06/user.jpg" class="img-circle" alt="User Image">
+										<img src="http://ahloman.net/wp-content/uploads/2013/06/user.jpg" class="rounded-circle" alt="User Image">
 										<p>
 											{{Auth::user()->name}}
 										</p>
 									</li>
 									<!-- Menu Footer-->
 									<li class="user-footer">
-										<div class="pull-right">
-											<a href="{{url('logout')}}" class="btn btn-default btn-flat"
+										<div class="float-right">
+											<a href="{{url('logout')}}" class="btn btn-secondary btn-flat"
 												onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">Sign out</a>
 											<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

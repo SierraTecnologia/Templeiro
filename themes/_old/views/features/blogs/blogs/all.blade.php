@@ -33,7 +33,7 @@
 
         <div class="col-md-4">
             @foreach($tags as $tag)
-                <a href="{{ url('blog/tags/'.$tag) }}" class="btn btn-default">{{ $tag }}</a>
+                <a href="{{ url('blog/tags/'.$tag) }}" class="btn btn-secondary">{{ $tag }}</a>
             @endforeach
         </div>
     </div>

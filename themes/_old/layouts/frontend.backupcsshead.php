@@ -124,12 +124,12 @@
             <!-- Footer -->
             <footer class="py-5 bg-dark">
                 <div class="container">
-                <p class="pull-left">&copy; {{ date('Y') }} - <a href="{{ url('pages') }}">{!! trans('features.pageDirectory') !!}</a></p>
+                <p class="float-left">&copy; {{ date('Y') }} - <a href="{{ url('pages') }}">{!! trans('features.pageDirectory') !!}</a></p>
                 @can('siravel')
-                    <a class="btn btn-xs btn-default pull-right" href="{{ url('admin/dashboard') }}">Siravel</a>
+                    <a class="btn btn-xs btn-secondary float-right" href="{{ url('admin/dashboard') }}">Siravel</a>
                     @yield('siravel')
                 @else
-                    <a class="btn btn-xs btn-default pull-right" href="{{ url('login') }}">{!! trans('features.login') !!}</a>
+                    <a class="btn btn-xs btn-secondary float-right" href="{{ url('login') }}">{!! trans('features.login') !!}</a>
                 @endcan
                 <p class="m-0 text-center text-white">Desenvolvido por <a href="http://www.sierratecnologia.com.br" target="_BLANK">SierraTecnologia</a></p>
                 </div>

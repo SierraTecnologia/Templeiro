@@ -5,11 +5,11 @@
 
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{!! 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( Auth::user()->email ) ) ) . '?s=150' !!}" class="img-circle"
+            <div class="float-left image">
+                <img src="{!! 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( Auth::user()->email ) ) ) . '?s=150' !!}" class="rounded-circle"
                      alt="{{ trans('default.user_image') }}"/>
             </div>
-            <div class="pull-left info">
+            <div class="float-left info">
                 @if (Auth::guest())
                 <p>{{ env('APP_NAME', 'SierraTecnologia') }}</p>
                 @else

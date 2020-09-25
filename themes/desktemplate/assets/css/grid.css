@@ -259,7 +259,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.img-circle {
+.rounded-circle {
   border-radius: 50%;
 }
 hr {

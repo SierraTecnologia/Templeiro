@@ -8,7 +8,7 @@
             <div class="btn-toolbar justify-content-between">
                 <form method="post" action="{!! url('user/notifications/search') !!}">
                     {!! csrf_field() !!}
-                    <input class="form-control form-inline pull-right" name="search" value="{{ request('search') }}" placeholder="Search">
+                    <input class="form-control form-inline float-right" name="search" value="{{ request('search') }}" placeholder="Search">
                 </form>
             </div>
         </div>

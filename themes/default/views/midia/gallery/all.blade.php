@@ -5,12 +5,12 @@
 
     <div class="col-md-6">
         @foreach ($images as $image)
-            <img class="thumbnail img-responsive" alt="{{ $image->alt_tag }}" src="{{ $image->url }}" />
+            <img class="thumbnail img-fluid" alt="{{ $image->alt_tag }}" src="{{ $image->url }}" />
         @endforeach
     </div>
     <div class="col-md-6">
         @foreach($tags as $tag)
-            <a href="{{ url('gallery/'.$tag->slug) }}" class="btn btn-default">{{ $tag->slug }}</a>
+            <a href="{{ url('gallery/'.$tag->slug) }}" class="btn btn-secondary">{{ $tag->slug }}</a>
         @endforeach
     </div>
 

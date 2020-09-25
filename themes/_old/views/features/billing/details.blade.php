@@ -16,7 +16,7 @@
                     <p>If you're positive you want to cancel your subscription please click below.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <a class="btn btn-danger float-right" href="{{ url('user/billing/cancellation') }}">Cancel My Subscription</a>
                 </div>
             </div>

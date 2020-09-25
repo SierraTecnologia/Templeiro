@@ -17,7 +17,7 @@
                     @include('billing.card-form')
 
                     <div class="clearfix">
-                        <button class="btn btn-primary pull-right" type="submit">Save</button>
+                        <button class="btn btn-primary float-right" type="submit">Save</button>
                     </div>
                 </form>
             </div>
