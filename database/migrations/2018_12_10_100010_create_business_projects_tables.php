@@ -1,8 +1,8 @@
 <?php
 
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateBusinessProjectsTables extends Migration
 {
@@ -13,10 +13,9 @@ class CreateBusinessProjectsTables extends Migration
      */
     public function up()
     {
-
         Schema::table(
-            'project', function (Blueprint $table) {
-
+            'project',
+            function (Blueprint $table) {
                 if (!Schema::hasColumn('project', 'url')) {
                     $table->string('url')->nullable();
                 }
@@ -37,6 +36,5 @@ class CreateBusinessProjectsTables extends Migration
      */
     public function down()
     {
-        
     }
 }
