@@ -12,13 +12,8 @@ use Support\Repositories\EntityRepository;
 abstract class EntityAbstract implements Arrayable
 {
     use ArrayableTrait;
-
-    public $code;
     
-    public function __construct($code = '')
-    {
-        $this->code = $code;
-    }
+
     
     public static function make($code = '')
     {

@@ -12,7 +12,12 @@ trait DefaultModuleServiceTrait
 {
     public $imageRepo;
 
-    public function defaultModules()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string}
+     */
+    public function defaultModules(): array
     {
         return [
             'blog',
@@ -86,9 +91,9 @@ trait DefaultModuleServiceTrait
      *
      * @param string $tag
      *
-     * @return collection
+     * @return string
      */
-    public function image($id, $class = '')
+    public function image($id, $class = ''): string
     {
         $img = '';
 
@@ -122,9 +127,9 @@ trait DefaultModuleServiceTrait
      *
      * @param string $tag
      *
-     * @return collection
+     * @return array
      */
-    public function images($tag = null)
+    public function images($tag = null): array
     {
         $images = [];
 

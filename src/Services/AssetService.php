@@ -20,11 +20,6 @@ class AssetService
 {
     protected $mimeTypes;
 
-    public function __construct()
-    {
-        $this->mimeTypes = include base_path('config'.DIRECTORY_SEPARATOR.'mime.php');
-    }
-
     /**
      * Provide the File as a Public Asset.
      *
@@ -44,7 +39,6 @@ class AssetService
                     $ext = $fileTool->getExtension();
                     $contentType = $this->getMimeType($ext);
 
-                    $headers = ['Content-Type' => $contentType];
                     $fileContent = $this->getFileContent($fileName, $contentType, $ext);
 
                     return Response::make(
@@ -86,7 +80,6 @@ class AssetService
                     }
 
                     if (stristr($contentType, 'image')) {
-                        $headers = ['Content-Type' => $contentType];
                         $fileContent = $this->getFileContent($fileName, $contentType, $ext);
                     } else {
                         $fileContent = file_get_contents($this->generateImage($ext));
@@ -126,7 +119,6 @@ class AssetService
                     $ext = $fileTool->getExtension();
                     $contentType = $this->getMimeType($ext);
 
-                    $headers = ['Content-Type' => $contentType];
                     $fileContent = $this->getFileContent($realFileName, $contentType, $ext);
 
                     return Response::make(
@@ -275,9 +267,9 @@ class AssetService
      *
      * @param string $ext
      *
-     * @return Image
+     * @return string
      */
-    public function generateImage($ext)
+    public function generateImage($ext): string
     {
         if ($ext == 'File Not Found') {
             return __DIR__.'/../Assets/src/images/blank-file-not-found.jpg';

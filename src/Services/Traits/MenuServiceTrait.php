@@ -15,9 +15,9 @@ trait MenuServiceTrait
     /**
      * Cms package Menus.
      *
-     * @return string
+     * @return void
      */
-    public function packageMenus()
+    public function packageMenus(): void
     {
         $packageViews = Config::get('siravel.package-menus', []);
 
@@ -32,7 +32,7 @@ trait MenuServiceTrait
      * @param string $slug
      * @param View   $view
      *
-     * @return string
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
      */
     public function menu($slug, $view = null, $class = '')
     {
@@ -94,7 +94,7 @@ trait MenuServiceTrait
      * @param collection $links
      * @param array      $keys
      *
-     * @return collection
+     * @return \Illuminate\Support\Collection|collection
      */
     public function sortByKeys($links, $keys)
     {

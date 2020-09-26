@@ -19,6 +19,9 @@ class AssetController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function assets(Request $request)
     {
         try {
@@ -34,7 +37,6 @@ class AssetController extends Controller
         }
 
         if (File::exists($path)) {
-            $mime = '';
             if (Str::endsWith($path, '.js')) {
                 $mime = 'text/javascript';
             } elseif (Str::endsWith($path, '.css')) {

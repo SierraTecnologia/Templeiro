@@ -35,14 +35,14 @@ trait ModuleServiceTrait
      * @param string $path        Asset path
      * @param string $contentType Content type
      *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function moduleAsset($module, $path, $contentType = 'null')
     {
         $assetPath = base_path(Config::get('siravel.module-directory').'/'.ucfirst($module).'/Assets/'.$path);
 
         if (!is_file($assetPath)) {
-            $assetPath = config('siravel.modules.'.$module.'.asset_path').'/'.$path;
+            config('siravel.modules.'.$module.'.asset_path').'/'.$path;
         }
 
         return url(config('siravel.backend-route-prefix', 'cms').'/asset/'.CryptoServiceFacade::url_encode($assetPath).'/'.CryptoServiceFacade::url_encode($contentType).'/?isModule=true');

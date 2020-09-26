@@ -19,6 +19,5 @@ class NewCommit
 
         // Analisa o Commit
 
-        $analyser = $commit;
     }
 }

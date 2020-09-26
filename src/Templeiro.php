@@ -56,25 +56,27 @@ class Templeiro
 
     protected $theme = 'default';
 
-    protected $boot = false;
+    protected bool $boot = false;
 
     public function __construct($theme)
     {
         $this->theme = $theme;
     }
-    public function setTheme($theme)
+    public function setTheme($theme): void
     {
         $this->theme = $theme;
     }
 
+    /**
+     * @return void
+     */
     public function loadBoot()
     {
         if ($this->boot) {
             return ;
         }
         $this->boot = true;
-        $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
-        $locationTheme = __DIR__.'/../'.'themes/';
+        base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
 
         View::addLocation($locationTheme.$this->theme.'/views');
         View::addNamespace('siravel-frontend', $locationTheme.$this->theme.'/views');
@@ -194,7 +196,7 @@ class Templeiro
      * @param string $path        Path to module asset
      * @param string $contentType Asset type
      *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function asset($path, $contentType = 'null', $fullURL = true)
     {
@@ -207,15 +209,18 @@ class Templeiro
     }
 
 
-    public function title()
+    public function title(): string
     {
         return 'title';
     }
-    public function description()
+    public function description(): string
     {
         return 'description';
     }
 
+    /**
+     * @return void
+     */
     public function loadView()
     {
         if ($this->layout) {
@@ -231,11 +236,12 @@ class Templeiro
      * Pass controller properties that are used by the layout and views through
      * to the view layer
      *
-     * @param  mixed $content string view name or an HtmlObject / View object
-     * @param  array $vars    Key value pairs passed to the content view
-     * @return Illuminate\View\View
+     * @param mixed $content string view name or an HtmlObject / View object
+     * @param array $vars    Key value pairs passed to the content view
+     *
+     * @return Illuminate\Contracts\View\Factory
      */
-    public function populateView($content, $vars = [])
+    public function populateView($content, $vars = []): Illuminate\Contracts\View\Factory
     {
         $this->loadView();
 
@@ -257,7 +263,7 @@ class Templeiro
         // Return the layout View
         return $this->layout;
     }
-    public function view($content, $vars = [])
+    public function view($content, $vars = []): Illuminate\View\View
     {
         return $this->populateView($content, $vars);
     }
