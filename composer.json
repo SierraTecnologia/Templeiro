@@ -24,6 +24,8 @@
     "require": {
         "php": "^7.4",
         "sierratecnologia/crypto":          "dev-master",
+        "sierratecnologia/pedreiro":          "dev-master",
+        "laravel/helpers": "^1.1",
         "league/plates":                "^3.1|^4.0|^5.0"
     },
     "require-dev": {

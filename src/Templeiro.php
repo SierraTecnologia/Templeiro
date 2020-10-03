@@ -4,6 +4,7 @@ namespace Templeiro;
 
 use Config;
 use Crypto;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Filesystem\Filesystem;
@@ -15,7 +16,6 @@ use Illuminate\Support\Str;
 use ReflectionClass;
 use Request;
 use Session;
-
 use View;
 
 class Templeiro
@@ -76,7 +76,8 @@ class Templeiro
             return ;
         }
         $this->boot = true;
-        base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
+        // $locationTheme = base_path('resources/themes/'); // @todo Verificar se existe no app antes do templeiro
+        $locationTheme = __DIR__.'/../themes/';
 
         View::addLocation($locationTheme.$this->theme.'/views');
         View::addNamespace('siravel-frontend', $locationTheme.$this->theme.'/views');
@@ -90,7 +91,8 @@ class Templeiro
         */
 
         Blade::directive(
-            'theme', function ($expression) {
+            'theme',
+            function ($expression) {
                 if (Str::startsWith($expression, '(')) {
                     $expression = substr($expression, 1, -1);
                 }
@@ -102,87 +104,101 @@ class Templeiro
         );
 
         Blade::directive(
-            'themejs', function ($expression) {
+            'themejs',
+            function ($expression) {
                 return "<?php echo Minify::javascript('".__DIR__."/../themes/".$this->theme."/assets/js/'.$expression); ?>";
                 /* return "<?php echo Minify::javascript('../themes/".$this->theme."/assets/js/'.$expression); ?>"; */
             }
         );
 
         Blade::directive(
-            'themecss', function ($expression) {
+            'themecss',
+            function ($expression) {
                 return "<?php echo Minify::stylesheet('".__DIR__."/../themes/".$this->theme."/assets/css/'.$expression); ?>";
                 /* return "<?php echo Minify::stylesheet('../themes/".$this->theme."/assets/css/'.$expression); ?>"; */
             }
         );
         Blade::directive(
-            'menu', function ($expression) {
+            'menu',
+            function ($expression) {
                 return "<?php echo Cms::menu($expression); ?>";
             }
         );
 
         Blade::directive(
-            'block', function ($expression) {
+            'block',
+            function ($expression) {
                 $module = Cms::getModule();
                 return "<?php echo optional(\$".$module.")->block($expression); ?>";
             }
         );
 
         Blade::directive(
-            'languages', function ($expression) {
+            'languages',
+            function ($expression) {
                 return "<?php echo Cms::languageLinks($expression); ?>";
             }
         );
 
         Blade::directive(
-            'modules', function ($expression) {
+            'modules',
+            function ($expression) {
                 return "<?php echo Cms::moduleLinks($expression); ?>";
             }
         );
 
         Blade::directive(
-            'widget', function ($expression) {
+            'widget',
+            function ($expression) {
                 return "<?php echo Cms::widget($expression); ?>";
             }
         );
 
         Blade::directive(
-            'promotion', function ($expression) {
+            'promotion',
+            function ($expression) {
                 return "<?php echo Cms::promotion($expression); ?>";
             }
         );
 
         Blade::directive(
-            'image', function ($expression) {
+            'image',
+            function ($expression) {
                 return "<?php echo Cms::image($expression); ?>";
             }
         );
 
         Blade::directive(
-            'image_link', function ($expression) {
+            'image_link',
+            function ($expression) {
                 return "<?php echo Cms::imageLink($expression); ?>";
             }
         );
 
         Blade::directive(
-            'images', function ($expression) {
+            'images',
+            function ($expression) {
                 return "<?php echo Cms::images($expression); ?>";
             }
         );
 
         Blade::directive(
-            'edit', function ($expression) {
+            'edit',
+            function ($expression) {
                 return "<?php echo Cms::editBtn($expression); ?>";
             }
         );
 
         Blade::directive(
-            'editBtn', function ($expression) {
+            'editBtn',
+            function ($expression) {
                 return "<?php echo Cms::editBtnSecondary($expression); ?>";
             }
         );
 
         Blade::directive(
-            'markdown', function ($expression) {
+            'markdown',
+            function ($expression) {
                 return "<?php echo Markdown::convertToHtml($expression); ?>";
             }
         );
@@ -239,9 +255,9 @@ class Templeiro
      * @param mixed $content string view name or an HtmlObject / View object
      * @param array $vars    Key value pairs passed to the content view
      *
-     * @return Illuminate\Contracts\View\Factory
+    //  * @return Illuminate\Contracts\View\Factory
      */
-    public function populateView($content, $vars = []): Illuminate\Contracts\View\Factory
+    public function populateView($content, $vars = [])
     {
         $this->loadView();
 
@@ -263,7 +279,7 @@ class Templeiro
         // Return the layout View
         return $this->layout;
     }
-    public function view($content, $vars = []): Illuminate\View\View
+    public function view($content, $vars = []): \Illuminate\View\View
     {
         return $this->populateView($content, $vars);
     }
