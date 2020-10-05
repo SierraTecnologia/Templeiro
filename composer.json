@@ -48,15 +48,7 @@
         "check-style": "phpcs -p --standard=PSR12 src --extensions=php",
         "fix-style": "phpcbf -p --standard=PSR12 src --extensions=php"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../**",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
+    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
     "config": {
         "bin-dir": "bin"
     },
