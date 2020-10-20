@@ -210,7 +210,7 @@ class TempleiroProvider extends ServiceProvider
         Config::set(
             'logging.channels.sitec-templeiro', [
             'driver' => 'single',
-            'path' => storage_path('logs'.DIRECTORY_SEPARACTOR.'sitec-templeiro.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARATOR.'sitec-templeiro.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
