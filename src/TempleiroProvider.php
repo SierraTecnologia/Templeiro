@@ -87,7 +87,7 @@ class TempleiroProvider extends ServiceProvider
         /**
          * Stalker Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
     }
 
     /**
@@ -163,7 +163,7 @@ class TempleiroProvider extends ServiceProvider
         $this->publishes(
             [
             // Paths
-            $this->getPublishesPath('config/sitec') => config_path('sitec'),
+            $this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec') => config_path('sitec'),
             ], ['config',  'sitec', 'sitec-config']
         );
 
@@ -183,7 +183,7 @@ class TempleiroProvider extends ServiceProvider
         $this->loadViewsFrom($viewsPath, 'templeiro');
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/templeiro'),
+            $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'templeiro'),
             ], ['views',  'sitec', 'sitec-views']
         );
     }
@@ -193,7 +193,7 @@ class TempleiroProvider extends ServiceProvider
         // Publish lanaguage files
         $this->publishes(
             [
-            $this->getResourcesPath('lang') => resource_path('lang/vendor/templeiro')
+            $this->getResourcesPath('lang') => resource_path('lang'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'templeiro')
             ], ['lang',  'sitec', 'sitec-lang', 'translations']
         );
 
@@ -210,7 +210,7 @@ class TempleiroProvider extends ServiceProvider
         Config::set(
             'logging.channels.sitec-templeiro', [
             'driver' => 'single',
-            'path' => storage_path('logs/sitec-templeiro.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARACTOR.'sitec-templeiro.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
